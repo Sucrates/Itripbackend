@@ -26,7 +26,6 @@ public class ItripHotelRoomController {
     @Resource
     private ItripHotelRoomService itripHotelRoomService;
 
-
     @ApiOperation(value = "查询全部酒店房间信息",
             response = List.class,
             produces = "application/json",
