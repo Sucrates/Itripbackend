@@ -1,4 +1,4 @@
-package com.ytzl.itrip.utils;
+package com.ytzl.itrip.utils.common;
 
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;

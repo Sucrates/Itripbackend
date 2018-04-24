@@ -1,4 +1,4 @@
-package com.ytzl.itrip.utils;
+package com.ytzl.itrip.utils.common;
 
 import java.io.InputStreamReader;
 import java.util.Properties;

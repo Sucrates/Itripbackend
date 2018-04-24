@@ -1,4 +1,4 @@
-package com.ytzl.itrip.utils;
+package com.ytzl.itrip.utils.common;
 
 import java.util.Collection;
 import java.util.Map;

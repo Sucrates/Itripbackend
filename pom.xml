@@ -427,5 +427,10 @@
             <version>2.6.1</version>
         </dependency>
         <!--SwaggerUI end-->
+        <dependency>
+            <groupId>com.ytzl.itrip</groupId>
+            <artifactId>smssdk</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
 </project>

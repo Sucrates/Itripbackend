@@ -6,9 +6,9 @@
 
     <select id="getItripTradeEndsById" resultType="ItripTradeEnds">
         select
-                id as id,
-                orderNo as orderNo,
-                flag as flag
+        id as id,         <!--订单ID-->
+        orderNo as orderNo,         <!--订单编号(注意非支付宝交易编号tradeNo)-->
+        flag as flag          <!--标识字段(默认0：未处理；1：处理中)-->
         from itrip_trade_ends
         <trim prefix="where" prefixOverrides="and | or">
             <if test="id != null">
@@ -19,10 +19,10 @@
 
     <select id="getItripTradeEndsListByMap" resultType="ItripTradeEnds"
             parameterType="java.util.Map">
-            select
-            id as id,       <!--订单ID-->
-            orderNo as orderNo,       <!--订单编号(注意非支付宝交易编号tradeNo)-->
-            flag as flag        <!--标识字段(默认0：未处理；1：处理中)-->
+        select
+        id as id,      <!--订单ID-->
+        orderNo as orderNo,      <!--订单编号(注意非支付宝交易编号tradeNo)-->
+        flag as flag       <!--标识字段(默认0：未处理；1：处理中)-->
         from itrip_trade_ends
         <trim prefix="where" prefixOverrides="and | or">
                 <if test="id != null and id!=''">
@@ -35,7 +35,6 @@
                     and flag=#{flag}
                 </if>
         </trim>
-
         order by creationDate desc
         <if test="beginPos != null and beginPos!='' and pageSize != null  and pageSize !='' ">
             limit #{beginPos},#{pageSize}
@@ -59,26 +58,26 @@
 
     <insert id="saveItripTradeEnds" parameterType="ItripTradeEnds">
         insert into itrip_trade_ends(
-                    orderNo as orderNo,       <!--订单编号(注意非支付宝交易编号tradeNo)-->
-                    flag as flag        <!--标识字段(默认0：未处理；1：处理中)-->
-                    )
+            orderNo ,      <!--订单编号(注意非支付宝交易编号tradeNo)-->
+            flag       <!--标识字段(默认0：未处理；1：处理中)-->
+        )
         values(
-
-                    #{orderNo as orderNo},       <!--订单编号(注意非支付宝交易编号tradeNo)-->
-                    #{flag as flag}        <!--标识字段(默认0：未处理；1：处理中)-->
+            #{orderNo} ,      <!--订单编号(注意非支付宝交易编号tradeNo)-->
+            #{flag}       <!--标识字段(默认0：未处理；1：处理中)-->
+        )
     </insert>
 
     <update id="modifyItripTradeEnds" parameterType="ItripTradeEnds">
         update itrip_trade_ends
-        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+        <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
                 <if test="id != null and id!=''">
-                    and id=#{id}
+                id=#{id},
                 </if>
                 <if test="orderNo != null and orderNo!=''">
-                    and orderNo=#{orderNo}
+                orderNo=#{orderNo},
                 </if>
                 <if test="flag != null and flag!=''">
-                    and flag=#{flag}
+                flag=#{flag},
                 </if>
         </trim>
     </update>

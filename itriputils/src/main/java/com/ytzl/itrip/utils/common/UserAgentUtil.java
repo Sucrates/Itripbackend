@@ -1,4 +1,4 @@
-package com.ytzl.itrip.utils;
+package com.ytzl.itrip.utils.common;
 
 import cz.mallat.uasparser.OnlineUpdater;
 import cz.mallat.uasparser.UASparser;
@@ -38,7 +38,7 @@ public class UserAgentUtil {
      * @param agent
      * @return
      */
-    public static boolean CheckAgent(String agent) {
+    public static boolean checkAgent(String agent) {
         boolean flag = false;
 
         String[] keywords = { "Android", "iPhone", "iPod", "iPad",

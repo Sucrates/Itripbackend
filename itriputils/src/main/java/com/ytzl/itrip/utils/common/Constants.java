@@ -1,4 +1,4 @@
-package com.ytzl.itrip.utils;
+package com.ytzl.itrip.utils.common;
 
 /**
  * Created by sam on 2018/2/9.

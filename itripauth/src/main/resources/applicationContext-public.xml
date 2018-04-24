@@ -12,6 +12,13 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <context:component-scan base-package="com.ytzl.itrip"/>
     <context:property-placeholder location="classpath*:db.properties"/>
+    <bean id="itrip" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <array>
+                <value>classpath*:public.properties</value>
+            </array>
+        </property>
+    </bean>
 
     <!--数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

@@ -6,13 +6,13 @@
 
     <select id="getItripHotelExtendPropertyById" resultType="ItripHotelExtendProperty">
         select
-                id as id,
-                hotelId as hotelId,
-                extendPropertyId as extendPropertyId,
-                creationDate as creationDate,
-                createdBy as createdBy,
-                modifyDate as modifyDate,
-                modifiedBy as modifiedBy
+        id as id,         <!---->
+        hotelId as hotelId,         <!--酒店id-->
+        extendPropertyId as extendPropertyId,         <!--推广属性-->
+        creationDate as creationDate,         <!---->
+        createdBy as createdBy,         <!---->
+        modifyDate as modifyDate,         <!---->
+        modifiedBy as modifiedBy          <!---->
         from itrip_hotel_extend_property
         <trim prefix="where" prefixOverrides="and | or">
             <if test="id != null">
@@ -23,14 +23,14 @@
 
     <select id="getItripHotelExtendPropertyListByMap" resultType="ItripHotelExtendProperty"
             parameterType="java.util.Map">
-            select
-            id as id,       <!---->
-            hotelId as hotelId,       <!--酒店id-->
-            extendPropertyId as extendPropertyId,       <!--推广属性-->
-            creationDate as creationDate,       <!---->
-            createdBy as createdBy,       <!---->
-            modifyDate as modifyDate,       <!---->
-            modifiedBy as modifiedBy        <!---->
+        select
+        id as id,      <!---->
+        hotelId as hotelId,      <!--酒店id-->
+        extendPropertyId as extendPropertyId,      <!--推广属性-->
+        creationDate as creationDate,      <!---->
+        createdBy as createdBy,      <!---->
+        modifyDate as modifyDate,      <!---->
+        modifiedBy as modifiedBy       <!---->
         from itrip_hotel_extend_property
         <trim prefix="where" prefixOverrides="and | or">
                 <if test="id != null and id!=''">
@@ -55,7 +55,6 @@
                     and modifiedBy=#{modifiedBy}
                 </if>
         </trim>
-
         order by creationDate desc
         <if test="beginPos != null and beginPos!='' and pageSize != null  and pageSize !='' ">
             limit #{beginPos},#{pageSize}
@@ -91,46 +90,46 @@
 
     <insert id="saveItripHotelExtendProperty" parameterType="ItripHotelExtendProperty">
         insert into itrip_hotel_extend_property(
-                    hotelId as hotelId,       <!--酒店id-->
-                    extendPropertyId as extendPropertyId,       <!--推广属性-->
-                    creationDate as creationDate,       <!---->
-                    createdBy as createdBy,       <!---->
-                    modifyDate as modifyDate,       <!---->
-                    modifiedBy as modifiedBy        <!---->
-                    )
+            hotelId ,      <!--酒店id-->
+            extendPropertyId ,      <!--推广属性-->
+            creationDate ,      <!---->
+            createdBy ,      <!---->
+            modifyDate ,      <!---->
+            modifiedBy       <!---->
+        )
         values(
-
-                    #{hotelId as hotelId},       <!--酒店id-->
-                    #{extendPropertyId as extendPropertyId},       <!--推广属性-->
-                    #{creationDate as creationDate},       <!---->
-                    #{createdBy as createdBy},       <!---->
-                    #{modifyDate as modifyDate},       <!---->
-                    #{modifiedBy as modifiedBy}        <!---->
+            #{hotelId} ,      <!--酒店id-->
+            #{extendPropertyId} ,      <!--推广属性-->
+            #{creationDate} ,      <!---->
+            #{createdBy} ,      <!---->
+            #{modifyDate} ,      <!---->
+            #{modifiedBy}       <!---->
+        )
     </insert>
 
     <update id="modifyItripHotelExtendProperty" parameterType="ItripHotelExtendProperty">
         update itrip_hotel_extend_property
-        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+        <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
                 <if test="id != null and id!=''">
-                    and id=#{id}
+                id=#{id},
                 </if>
                 <if test="hotelId != null and hotelId!=''">
-                    and hotelId=#{hotelId}
+                hotelId=#{hotelId},
                 </if>
                 <if test="extendPropertyId != null and extendPropertyId!=''">
-                    and extendPropertyId=#{extendPropertyId}
+                extendPropertyId=#{extendPropertyId},
                 </if>
                 <if test="creationDate != null and creationDate!=''">
-                    and creationDate=#{creationDate}
+                creationDate=#{creationDate},
                 </if>
                 <if test="createdBy != null and createdBy!=''">
-                    and createdBy=#{createdBy}
+                createdBy=#{createdBy},
                 </if>
                 <if test="modifyDate != null and modifyDate!=''">
-                    and modifyDate=#{modifyDate}
+                modifyDate=#{modifyDate},
                 </if>
                 <if test="modifiedBy != null and modifiedBy!=''">
-                    and modifiedBy=#{modifiedBy}
+                modifiedBy=#{modifiedBy},
                 </if>
         </trim>
     </update>

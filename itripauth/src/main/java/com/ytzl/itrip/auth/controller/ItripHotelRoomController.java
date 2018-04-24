@@ -29,7 +29,7 @@ public class ItripHotelRoomController {
     @ApiOperation(value = "查询全部酒店房间信息",
             response = List.class,
             produces = "application/json",
-            httpMethod = "get",
+            httpMethod = "GET",
             notes = "查询全部用户信息  \n，" + "请求成功返回json数据，反之返回null")
     @RequestMapping(value = "/queryAll",
             method = RequestMethod.GET,
@@ -48,7 +48,7 @@ public class ItripHotelRoomController {
     @ApiOperation(value = "通过酒店Id查询酒店房间信息",
             response = List.class,
             produces = "application/json",
-            httpMethod = "post",
+            httpMethod = "POST",
             notes = "通过酒店Id查询酒店房间信息  \n，" + "请求成功返回json数据，反之返回null")
     @RequestMapping(value = "/queryByHotelId",
             method = RequestMethod.POST,
@@ -69,7 +69,7 @@ public class ItripHotelRoomController {
     @ApiOperation(value = "根据酒店id查询酒店房间信息",
             response = List.class,
             produces = "application/json",
-            httpMethod = "post",
+            httpMethod = "POST",
             notes = "根据酒店id查询酒店信息  \n，" + "请求成功返回json数据，反之返回null")
 
     @RequestMapping(value = "/queryByHotelRoomVO",
@@ -77,11 +77,11 @@ public class ItripHotelRoomController {
             produces = "application/json")
 
     @ResponseBody
-    public  List<ItripHotelRoom> queryByHotelRoomVo(@RequestBody ItripHotelRoomVO itripHotelRoomVO){
+    public List<ItripHotelRoom> queryByHotelRoomVo(@RequestBody ItripHotelRoomVO itripHotelRoomVO) {
         Map<String, Object> param = new HashMap<>();
-        param.put("hotelId",itripHotelRoomVO.getHotelId());
+        param.put("hotelId", itripHotelRoomVO.getHotelId());
         try {
-            return  itripHotelRoomService.getItripHotelRoomListByMap(param);
+            return itripHotelRoomService.getItripHotelRoomListByMap(param);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

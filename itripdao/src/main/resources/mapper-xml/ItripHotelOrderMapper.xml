@@ -6,33 +6,33 @@
 
     <select id="getItripHotelOrderById" resultType="ItripHotelOrder">
         select
-                id as id,
-                userId as userId,
-                orderType as orderType,
-                orderNo as orderNo,
-                tradeNo as tradeNo,
-                hotelId as hotelId,
-                hotelName as hotelName,
-                roomId as roomId,
-                count as count,
-                bookingDays as bookingDays,
-                checkInDate as checkInDate,
-                checkOutDate as checkOutDate,
-                orderStatus as orderStatus,
-                payAmount as payAmount,
-                payType as payType,
-                noticePhone as noticePhone,
-                noticeEmail as noticeEmail,
-                specialRequirement as specialRequirement,
-                isNeedInvoice as isNeedInvoice,
-                invoiceType as invoiceType,
-                invoiceHead as invoiceHead,
-                linkUserName as linkUserName,
-                bookType as bookType,
-                creationDate as creationDate,
-                createdBy as createdBy,
-                modifyDate as modifyDate,
-                modifiedBy as modifiedBy
+        id as id,         <!--主键-->
+        userId as userId,         <!--用户id-->
+        orderType as orderType,         <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
+        orderNo as orderNo,         <!--订单号-->
+        tradeNo as tradeNo,         <!--交易编号-->
+        hotelId as hotelId,         <!--冗余字段 酒店id-->
+        hotelName as hotelName,         <!--冗余字段 酒店名称-->
+        roomId as roomId,         <!--房间id-->
+        count as count,         <!--消耗数量-->
+        bookingDays as bookingDays,         <!--预订天数-->
+        checkInDate as checkInDate,         <!--入住时间-->
+        checkOutDate as checkOutDate,         <!--退房时间-->
+        orderStatus as orderStatus,         <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
+        payAmount as payAmount,         <!--支付金额-->
+        payType as payType,         <!--支付方式:1:支付宝 2:微信 3:到店付-->
+        noticePhone as noticePhone,         <!--联系手机号-->
+        noticeEmail as noticeEmail,         <!--联系邮箱-->
+        specialRequirement as specialRequirement,         <!--特殊需求-->
+        isNeedInvoice as isNeedInvoice,         <!--是否需要发票（0：不需要 1：需要）-->
+        invoiceType as invoiceType,         <!--发票类型（0：个人 1：公司）-->
+        invoiceHead as invoiceHead,         <!--发票抬头-->
+        linkUserName as linkUserName,         <!--入住人名称-->
+        bookType as bookType,         <!--0:WEB端 1:手机端 2:其他客户端-->
+        creationDate as creationDate,         <!--预定时间-->
+        createdBy as createdBy,         <!---->
+        modifyDate as modifyDate,         <!--支付完成时间-->
+        modifiedBy as modifiedBy          <!---->
         from itrip_hotel_order
         <trim prefix="where" prefixOverrides="and | or">
             <if test="id != null">
@@ -43,34 +43,34 @@
 
     <select id="getItripHotelOrderListByMap" resultType="ItripHotelOrder"
             parameterType="java.util.Map">
-            select
-            id as id,       <!--主键-->
-            userId as userId,       <!--用户id-->
-            orderType as orderType,       <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
-            orderNo as orderNo,       <!--订单号-->
-            tradeNo as tradeNo,       <!--交易编号-->
-            hotelId as hotelId,       <!--冗余字段 酒店id-->
-            hotelName as hotelName,       <!--冗余字段 酒店名称-->
-            roomId as roomId,       <!--房间id-->
-            count as count,       <!--消耗数量-->
-            bookingDays as bookingDays,       <!--预订天数-->
-            checkInDate as checkInDate,       <!--入住时间-->
-            checkOutDate as checkOutDate,       <!--退房时间-->
-            orderStatus as orderStatus,       <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
-            payAmount as payAmount,       <!--支付金额-->
-            payType as payType,       <!--支付方式:1:支付宝 2:微信 3:到店付-->
-            noticePhone as noticePhone,       <!--联系手机号-->
-            noticeEmail as noticeEmail,       <!--联系邮箱-->
-            specialRequirement as specialRequirement,       <!--特殊需求-->
-            isNeedInvoice as isNeedInvoice,       <!--是否需要发票（0：不需要 1：需要）-->
-            invoiceType as invoiceType,       <!--发票类型（0：个人 1：公司）-->
-            invoiceHead as invoiceHead,       <!--发票抬头-->
-            linkUserName as linkUserName,       <!--入住人名称-->
-            bookType as bookType,       <!--0:WEB端 1:手机端 2:其他客户端-->
-            creationDate as creationDate,       <!--预定时间-->
-            createdBy as createdBy,       <!---->
-            modifyDate as modifyDate,       <!--支付完成时间-->
-            modifiedBy as modifiedBy        <!---->
+        select
+        id as id,      <!--主键-->
+        userId as userId,      <!--用户id-->
+        orderType as orderType,      <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
+        orderNo as orderNo,      <!--订单号-->
+        tradeNo as tradeNo,      <!--交易编号-->
+        hotelId as hotelId,      <!--冗余字段 酒店id-->
+        hotelName as hotelName,      <!--冗余字段 酒店名称-->
+        roomId as roomId,      <!--房间id-->
+        count as count,      <!--消耗数量-->
+        bookingDays as bookingDays,      <!--预订天数-->
+        checkInDate as checkInDate,      <!--入住时间-->
+        checkOutDate as checkOutDate,      <!--退房时间-->
+        orderStatus as orderStatus,      <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
+        payAmount as payAmount,      <!--支付金额-->
+        payType as payType,      <!--支付方式:1:支付宝 2:微信 3:到店付-->
+        noticePhone as noticePhone,      <!--联系手机号-->
+        noticeEmail as noticeEmail,      <!--联系邮箱-->
+        specialRequirement as specialRequirement,      <!--特殊需求-->
+        isNeedInvoice as isNeedInvoice,      <!--是否需要发票（0：不需要 1：需要）-->
+        invoiceType as invoiceType,      <!--发票类型（0：个人 1：公司）-->
+        invoiceHead as invoiceHead,      <!--发票抬头-->
+        linkUserName as linkUserName,      <!--入住人名称-->
+        bookType as bookType,      <!--0:WEB端 1:手机端 2:其他客户端-->
+        creationDate as creationDate,      <!--预定时间-->
+        createdBy as createdBy,      <!---->
+        modifyDate as modifyDate,      <!--支付完成时间-->
+        modifiedBy as modifiedBy       <!---->
         from itrip_hotel_order
         <trim prefix="where" prefixOverrides="and | or">
                 <if test="id != null and id!=''">
@@ -79,7 +79,7 @@
                 <if test="userId != null and userId!=''">
                     and userId=#{userId}
                 </if>
-                <if test="orderType != null and orderType!='' or orderType==0">
+                <if test="orderType != null and (orderType!='' or orderType==0)">
                     and orderType=#{orderType}
                 </if>
                 <if test="orderNo != null and orderNo!=''">
@@ -97,10 +97,10 @@
                 <if test="roomId != null and roomId!=''">
                     and roomId=#{roomId}
                 </if>
-                <if test="count != null and count!='' or count==0">
+                <if test="count != null and (count!='' or count==0)">
                     and count=#{count}
                 </if>
-                <if test="bookingDays != null and bookingDays!='' or bookingDays==0">
+                <if test="bookingDays != null and (bookingDays!='' or bookingDays==0)">
                     and bookingDays=#{bookingDays}
                 </if>
                 <if test="checkInDate != null and checkInDate!=''">
@@ -109,13 +109,13 @@
                 <if test="checkOutDate != null and checkOutDate!=''">
                     and checkOutDate=#{checkOutDate}
                 </if>
-                <if test="orderStatus != null and orderStatus!='' or orderStatus==0">
+                <if test="orderStatus != null and (orderStatus!='' or orderStatus==0)">
                     and orderStatus=#{orderStatus}
                 </if>
                 <if test="payAmount != null and payAmount!=''">
                     and payAmount=#{payAmount}
                 </if>
-                <if test="payType != null and payType!='' or payType==0">
+                <if test="payType != null and (payType!='' or payType==0)">
                     and payType=#{payType}
                 </if>
                 <if test="noticePhone != null and noticePhone!=''">
@@ -127,10 +127,10 @@
                 <if test="specialRequirement != null and specialRequirement!=''">
                     and specialRequirement=#{specialRequirement}
                 </if>
-                <if test="isNeedInvoice != null and isNeedInvoice!='' or isNeedInvoice==0">
+                <if test="isNeedInvoice != null and (isNeedInvoice!='' or isNeedInvoice==0)">
                     and isNeedInvoice=#{isNeedInvoice}
                 </if>
-                <if test="invoiceType != null and invoiceType!='' or invoiceType==0">
+                <if test="invoiceType != null and (invoiceType!='' or invoiceType==0)">
                     and invoiceType=#{invoiceType}
                 </if>
                 <if test="invoiceHead != null and invoiceHead!=''">
@@ -139,7 +139,7 @@
                 <if test="linkUserName != null and linkUserName!=''">
                     and linkUserName=#{linkUserName}
                 </if>
-                <if test="bookType != null and bookType!='' or bookType==0">
+                <if test="bookType != null and (bookType!='' or bookType==0)">
                     and bookType=#{bookType}
                 </if>
                 <if test="creationDate != null and creationDate!=''">
@@ -155,7 +155,6 @@
                     and modifiedBy=#{modifiedBy}
                 </if>
         </trim>
-
         order by creationDate desc
         <if test="beginPos != null and beginPos!='' and pageSize != null  and pageSize !='' ">
             limit #{beginPos},#{pageSize}
@@ -171,7 +170,7 @@
                 <if test="userId != null and userId!=''">
                     and userId=#{userId}
                 </if>
-                <if test="orderType != null and orderType!='' or orderType==0">
+                <if test="orderType != null and (orderType!='' or orderType==0)">
                     and orderType=#{orderType}
                 </if>
                 <if test="orderNo != null and orderNo!=''">
@@ -189,10 +188,10 @@
                 <if test="roomId != null and roomId!=''">
                     and roomId=#{roomId}
                 </if>
-                <if test="count != null and count!='' or count==0">
+                <if test="count != null and (count!='' or count==0)">
                     and count=#{count}
                 </if>
-                <if test="bookingDays != null and bookingDays!='' or bookingDays==0">
+                <if test="bookingDays != null and (bookingDays!='' or bookingDays==0)">
                     and bookingDays=#{bookingDays}
                 </if>
                 <if test="checkInDate != null and checkInDate!=''">
@@ -201,13 +200,13 @@
                 <if test="checkOutDate != null and checkOutDate!=''">
                     and checkOutDate=#{checkOutDate}
                 </if>
-                <if test="orderStatus != null and orderStatus!='' or orderStatus==0">
+                <if test="orderStatus != null and (orderStatus!='' or orderStatus==0)">
                     and orderStatus=#{orderStatus}
                 </if>
                 <if test="payAmount != null and payAmount!=''">
                     and payAmount=#{payAmount}
                 </if>
-                <if test="payType != null and payType!='' or payType==0">
+                <if test="payType != null and (payType!='' or payType==0)">
                     and payType=#{payType}
                 </if>
                 <if test="noticePhone != null and noticePhone!=''">
@@ -219,10 +218,10 @@
                 <if test="specialRequirement != null and specialRequirement!=''">
                     and specialRequirement=#{specialRequirement}
                 </if>
-                <if test="isNeedInvoice != null and isNeedInvoice!='' or isNeedInvoice==0">
+                <if test="isNeedInvoice != null and (isNeedInvoice!='' or isNeedInvoice==0)">
                     and isNeedInvoice=#{isNeedInvoice}
                 </if>
-                <if test="invoiceType != null and invoiceType!='' or invoiceType==0">
+                <if test="invoiceType != null and (invoiceType!='' or invoiceType==0)">
                     and invoiceType=#{invoiceType}
                 </if>
                 <if test="invoiceHead != null and invoiceHead!=''">
@@ -231,7 +230,7 @@
                 <if test="linkUserName != null and linkUserName!=''">
                     and linkUserName=#{linkUserName}
                 </if>
-                <if test="bookType != null and bookType!='' or bookType==0">
+                <if test="bookType != null and (bookType!='' or bookType==0)">
                     and bookType=#{bookType}
                 </if>
                 <if test="creationDate != null and creationDate!=''">
@@ -251,146 +250,146 @@
 
     <insert id="saveItripHotelOrder" parameterType="ItripHotelOrder">
         insert into itrip_hotel_order(
-                    userId as userId,       <!--用户id-->
-                    orderType as orderType,       <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
-                    orderNo as orderNo,       <!--订单号-->
-                    tradeNo as tradeNo,       <!--交易编号-->
-                    hotelId as hotelId,       <!--冗余字段 酒店id-->
-                    hotelName as hotelName,       <!--冗余字段 酒店名称-->
-                    roomId as roomId,       <!--房间id-->
-                    count as count,       <!--消耗数量-->
-                    bookingDays as bookingDays,       <!--预订天数-->
-                    checkInDate as checkInDate,       <!--入住时间-->
-                    checkOutDate as checkOutDate,       <!--退房时间-->
-                    orderStatus as orderStatus,       <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
-                    payAmount as payAmount,       <!--支付金额-->
-                    payType as payType,       <!--支付方式:1:支付宝 2:微信 3:到店付-->
-                    noticePhone as noticePhone,       <!--联系手机号-->
-                    noticeEmail as noticeEmail,       <!--联系邮箱-->
-                    specialRequirement as specialRequirement,       <!--特殊需求-->
-                    isNeedInvoice as isNeedInvoice,       <!--是否需要发票（0：不需要 1：需要）-->
-                    invoiceType as invoiceType,       <!--发票类型（0：个人 1：公司）-->
-                    invoiceHead as invoiceHead,       <!--发票抬头-->
-                    linkUserName as linkUserName,       <!--入住人名称-->
-                    bookType as bookType,       <!--0:WEB端 1:手机端 2:其他客户端-->
-                    creationDate as creationDate,       <!--预定时间-->
-                    createdBy as createdBy,       <!---->
-                    modifyDate as modifyDate,       <!--支付完成时间-->
-                    modifiedBy as modifiedBy        <!---->
-                    )
+            userId ,      <!--用户id-->
+            orderType ,      <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
+            orderNo ,      <!--订单号-->
+            tradeNo ,      <!--交易编号-->
+            hotelId ,      <!--冗余字段 酒店id-->
+            hotelName ,      <!--冗余字段 酒店名称-->
+            roomId ,      <!--房间id-->
+            count ,      <!--消耗数量-->
+            bookingDays ,      <!--预订天数-->
+            checkInDate ,      <!--入住时间-->
+            checkOutDate ,      <!--退房时间-->
+            orderStatus ,      <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
+            payAmount ,      <!--支付金额-->
+            payType ,      <!--支付方式:1:支付宝 2:微信 3:到店付-->
+            noticePhone ,      <!--联系手机号-->
+            noticeEmail ,      <!--联系邮箱-->
+            specialRequirement ,      <!--特殊需求-->
+            isNeedInvoice ,      <!--是否需要发票（0：不需要 1：需要）-->
+            invoiceType ,      <!--发票类型（0：个人 1：公司）-->
+            invoiceHead ,      <!--发票抬头-->
+            linkUserName ,      <!--入住人名称-->
+            bookType ,      <!--0:WEB端 1:手机端 2:其他客户端-->
+            creationDate ,      <!--预定时间-->
+            createdBy ,      <!---->
+            modifyDate ,      <!--支付完成时间-->
+            modifiedBy       <!---->
+        )
         values(
-
-                    #{userId as userId},       <!--用户id-->
-                    #{orderType as orderType},       <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
-                    #{orderNo as orderNo},       <!--订单号-->
-                    #{tradeNo as tradeNo},       <!--交易编号-->
-                    #{hotelId as hotelId},       <!--冗余字段 酒店id-->
-                    #{hotelName as hotelName},       <!--冗余字段 酒店名称-->
-                    #{roomId as roomId},       <!--房间id-->
-                    #{count as count},       <!--消耗数量-->
-                    #{bookingDays as bookingDays},       <!--预订天数-->
-                    #{checkInDate as checkInDate},       <!--入住时间-->
-                    #{checkOutDate as checkOutDate},       <!--退房时间-->
-                    #{orderStatus as orderStatus},       <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
-                    #{payAmount as payAmount},       <!--支付金额-->
-                    #{payType as payType},       <!--支付方式:1:支付宝 2:微信 3:到店付-->
-                    #{noticePhone as noticePhone},       <!--联系手机号-->
-                    #{noticeEmail as noticeEmail},       <!--联系邮箱-->
-                    #{specialRequirement as specialRequirement},       <!--特殊需求-->
-                    #{isNeedInvoice as isNeedInvoice},       <!--是否需要发票（0：不需要 1：需要）-->
-                    #{invoiceType as invoiceType},       <!--发票类型（0：个人 1：公司）-->
-                    #{invoiceHead as invoiceHead},       <!--发票抬头-->
-                    #{linkUserName as linkUserName},       <!--入住人名称-->
-                    #{bookType as bookType},       <!--0:WEB端 1:手机端 2:其他客户端-->
-                    #{creationDate as creationDate},       <!--预定时间-->
-                    #{createdBy as createdBy},       <!---->
-                    #{modifyDate as modifyDate},       <!--支付完成时间-->
-                    #{modifiedBy as modifiedBy}        <!---->
+            #{userId} ,      <!--用户id-->
+            #{orderType} ,      <!--订单类型(0:旅游产品 1:酒店产品 2：机票产品)-->
+            #{orderNo} ,      <!--订单号-->
+            #{tradeNo} ,      <!--交易编号-->
+            #{hotelId} ,      <!--冗余字段 酒店id-->
+            #{hotelName} ,      <!--冗余字段 酒店名称-->
+            #{roomId} ,      <!--房间id-->
+            #{count} ,      <!--消耗数量-->
+            #{bookingDays} ,      <!--预订天数-->
+            #{checkInDate} ,      <!--入住时间-->
+            #{checkOutDate} ,      <!--退房时间-->
+            #{orderStatus} ,      <!--订单状态（0：待支付 1:已取消 2:支付成功 3:已消费 4：已点评）-->
+            #{payAmount} ,      <!--支付金额-->
+            #{payType} ,      <!--支付方式:1:支付宝 2:微信 3:到店付-->
+            #{noticePhone} ,      <!--联系手机号-->
+            #{noticeEmail} ,      <!--联系邮箱-->
+            #{specialRequirement} ,      <!--特殊需求-->
+            #{isNeedInvoice} ,      <!--是否需要发票（0：不需要 1：需要）-->
+            #{invoiceType} ,      <!--发票类型（0：个人 1：公司）-->
+            #{invoiceHead} ,      <!--发票抬头-->
+            #{linkUserName} ,      <!--入住人名称-->
+            #{bookType} ,      <!--0:WEB端 1:手机端 2:其他客户端-->
+            #{creationDate} ,      <!--预定时间-->
+            #{createdBy} ,      <!---->
+            #{modifyDate} ,      <!--支付完成时间-->
+            #{modifiedBy}       <!---->
+        )
     </insert>
 
     <update id="modifyItripHotelOrder" parameterType="ItripHotelOrder">
         update itrip_hotel_order
-        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+        <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
                 <if test="id != null and id!=''">
-                    and id=#{id}
+                id=#{id},
                 </if>
                 <if test="userId != null and userId!=''">
-                    and userId=#{userId}
+                userId=#{userId},
                 </if>
-                <if test="orderType != null and orderType!='' or orderType==0">
-                    and orderType=#{orderType}
+                <if test="orderType != null and (orderType!='' or orderType==0)">
+                orderType=#{orderType},
                 </if>
                 <if test="orderNo != null and orderNo!=''">
-                    and orderNo=#{orderNo}
+                orderNo=#{orderNo},
                 </if>
                 <if test="tradeNo != null and tradeNo!=''">
-                    and tradeNo=#{tradeNo}
+                tradeNo=#{tradeNo},
                 </if>
                 <if test="hotelId != null and hotelId!=''">
-                    and hotelId=#{hotelId}
+                hotelId=#{hotelId},
                 </if>
                 <if test="hotelName != null and hotelName!=''">
-                    and hotelName=#{hotelName}
+                hotelName=#{hotelName},
                 </if>
                 <if test="roomId != null and roomId!=''">
-                    and roomId=#{roomId}
+                roomId=#{roomId},
                 </if>
-                <if test="count != null and count!='' or count==0">
-                    and count=#{count}
+                <if test="count != null and (count!='' or count==0)">
+                count=#{count},
                 </if>
-                <if test="bookingDays != null and bookingDays!='' or bookingDays==0">
-                    and bookingDays=#{bookingDays}
+                <if test="bookingDays != null and (bookingDays!='' or bookingDays==0)">
+                bookingDays=#{bookingDays},
                 </if>
                 <if test="checkInDate != null and checkInDate!=''">
-                    and checkInDate=#{checkInDate}
+                checkInDate=#{checkInDate},
                 </if>
                 <if test="checkOutDate != null and checkOutDate!=''">
-                    and checkOutDate=#{checkOutDate}
+                checkOutDate=#{checkOutDate},
                 </if>
-                <if test="orderStatus != null and orderStatus!='' or orderStatus==0">
-                    and orderStatus=#{orderStatus}
+                <if test="orderStatus != null and (orderStatus!='' or orderStatus==0)">
+                orderStatus=#{orderStatus},
                 </if>
                 <if test="payAmount != null and payAmount!=''">
-                    and payAmount=#{payAmount}
+                payAmount=#{payAmount},
                 </if>
-                <if test="payType != null and payType!='' or payType==0">
-                    and payType=#{payType}
+                <if test="payType != null and (payType!='' or payType==0)">
+                payType=#{payType},
                 </if>
                 <if test="noticePhone != null and noticePhone!=''">
-                    and noticePhone=#{noticePhone}
+                noticePhone=#{noticePhone},
                 </if>
                 <if test="noticeEmail != null and noticeEmail!=''">
-                    and noticeEmail=#{noticeEmail}
+                noticeEmail=#{noticeEmail},
                 </if>
                 <if test="specialRequirement != null and specialRequirement!=''">
-                    and specialRequirement=#{specialRequirement}
+                specialRequirement=#{specialRequirement},
                 </if>
-                <if test="isNeedInvoice != null and isNeedInvoice!='' or isNeedInvoice==0">
-                    and isNeedInvoice=#{isNeedInvoice}
+                <if test="isNeedInvoice != null and (isNeedInvoice!='' or isNeedInvoice==0)">
+                isNeedInvoice=#{isNeedInvoice},
                 </if>
-                <if test="invoiceType != null and invoiceType!='' or invoiceType==0">
-                    and invoiceType=#{invoiceType}
+                <if test="invoiceType != null and (invoiceType!='' or invoiceType==0)">
+                invoiceType=#{invoiceType},
                 </if>
                 <if test="invoiceHead != null and invoiceHead!=''">
-                    and invoiceHead=#{invoiceHead}
+                invoiceHead=#{invoiceHead},
                 </if>
                 <if test="linkUserName != null and linkUserName!=''">
-                    and linkUserName=#{linkUserName}
+                linkUserName=#{linkUserName},
                 </if>
-                <if test="bookType != null and bookType!='' or bookType==0">
-                    and bookType=#{bookType}
+                <if test="bookType != null and (bookType!='' or bookType==0)">
+                bookType=#{bookType},
                 </if>
                 <if test="creationDate != null and creationDate!=''">
-                    and creationDate=#{creationDate}
+                creationDate=#{creationDate},
                 </if>
                 <if test="createdBy != null and createdBy!=''">
-                    and createdBy=#{createdBy}
+                createdBy=#{createdBy},
                 </if>
                 <if test="modifyDate != null and modifyDate!=''">
-                    and modifyDate=#{modifyDate}
+                modifyDate=#{modifyDate},
                 </if>
                 <if test="modifiedBy != null and modifiedBy!=''">
-                    and modifiedBy=#{modifiedBy}
+                modifiedBy=#{modifiedBy},
                 </if>
         </trim>
     </update>
