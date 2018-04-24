@@ -28,7 +28,7 @@ public class TokenController {
     @Resource
     private TokenService tokenService;
 
-    @ApiOperation(value = "Token置换", httpMethod = "post",
+    @ApiOperation(value = "Token置换", httpMethod = "POST",
             produces = "application/json"
             , response = Dto.class,
             notes = "提供客户端置换token操作，服务器需要获取客户端header中的token串")
