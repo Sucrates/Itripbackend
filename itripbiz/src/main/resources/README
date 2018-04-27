@@ -1,0 +1,30 @@
+1、搭建Spring开发环境
+    1.1、添加jar以及Spring配置文件
+    1.2、在Spring配置文件中添加bean，java.util.Date
+    1.3、使用Junit4进行测试，正确输出日期则Spring环境搭建成功
+
+2、搭建mybatis开发环境
+	2.1、创建数据库以及数据表并添加三条测试数据
+	2.2、添加jar包以及mybatis-config.xml mybatis配置文件
+	2.3、创建实体类model，创建mapper.xml以及对应的接口
+	2.4、将mapper.xml添加到mybatis配置文件中
+	2.5、在junit4中测试。输出正常则mybatis环境搭建成功
+
+3、整合spring和mybatis
+	3.1、编写spring配置文件
+		3.1.0、配置注解扫描
+		3.1.1、数据源
+		3.1.2、sessionFactory
+		3.1.3、事务管理器
+		3.1.4、通知和切面表达式
+		3.1.5、MapperScannerConfigurer 生成mybatis接口动态代理对象
+	3.2、使用junit4从spring容器中获取bean，查询用户信息。
+		正常输出则spring和mybatis搭建成功
+
+4、搭建spring开发环境
+	4.1、添加jar包并添加spring配置文件
+	4.2、编写web.xml 配置核心控制器
+	4.3、添加controller并编写/query方法返回所有用户信息
+	4.4、编写springmvc配置文件
+		4.4.1、注解扫描
+		4.4.2、mvc注解驱动 ->> 配置全局消息转换器编码为UTF-8

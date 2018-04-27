@@ -107,6 +107,62 @@ public class ItripUserController {
         }
     }
 
+    @ApiOperation(value = "使用邮箱注册", httpMethod = "POST",
+            produces = "application/json"
+            , response = Dto.class, notes = "使用邮箱注册")
+    @RequestMapping(value = "/doregister",
+            method = RequestMethod.POST,
+            produces = "application/json")
+    @ResponseBody
+    public Dto registerbymail(@RequestBody ItripUserRegisterVO itripUserRegisterVO){
+        //验证手机号是否正确
+        if (!validEmail(itripUserRegisterVO.getUserCode())) {
+            return DtoUtil.returnFail("邮箱格式不正确",
+                    ErrorCode.AUTH_ILLEGAL_USERCODE);
+        }
+        //将vo类转换为实体
+        ItripUser itripUser = new ItripUser();
+        itripUser.setUserCode(itripUserRegisterVO.getUserCode());
+        itripUser.setUserName(itripUserRegisterVO.getUserName());
+        itripUser.setUserPassword(
+                DigestUtil.hmacSign(itripUserRegisterVO.getUserPassword()));
+//        BeanUtils.copyProperties(itripUserRegisterVO,itripUser);
+        //调用service进行注册
+        try {
+            ItripUser user = itripUserService.getItripUserByUserCode(itripUser.getUserCode());
+            if (null == user) {
+                itripUserService.doregister(itripUser);
+                return DtoUtil.returnSuccess();
+            } else {
+                throw new ItripException("用户已存在", ErrorCode.AUTH_USER_ALREADY_EXISTS);
+            }
+        } catch (ItripException e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail(e.getMessage(), e.getErrorCode());
+        }
+    }
+
+    @ApiOperation(value = "邮箱注册用户邮箱验证", httpMethod = "PUT", produces = "application/json"
+            , response = Dto.class, notes = "邮箱注册用户邮箱验证")
+    @RequestMapping(value = "/activate", method = RequestMethod.PUT,
+            produces = "application/json")
+    @ResponseBody
+    public Dto activate(@RequestParam("user")
+                             @ApiParam(value = "用户账号", required = true) String user,
+                             @RequestParam("code")
+                             @ApiParam(value = "激活码", required = true) String code) {
+        try {
+            //验证短信验证码
+            itripUserService.activate(user, code);
+            //验证成功
+            return DtoUtil.returnSuccess("验证成功");
+        } catch (ItripException e) {
+            e.printStackTrace();
+            return DtoUtil.returnSuccess("验证失败");
+        }
+    }
+
+
     /**
      * 合法E-mail地址：
      * 1. 必须包含一个并且只有一个符号“@”

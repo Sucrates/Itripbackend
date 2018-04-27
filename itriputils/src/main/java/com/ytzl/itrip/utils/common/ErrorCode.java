@@ -24,7 +24,18 @@ public class ErrorCode {
 	public final static String AUTH_REPLACEMENT_FAILED="30005";//置换token失败
 	public final static String AUTH_TOKEN_INVALID="30006";//token无效
 	public static final String AUTH_ILLEGAL_USERCODE = "30007";//非法的用户名
-	
-	
 	/*认证模块错误码-end*/
+
+	/*主业务模块-start*/
+	public static final String BIZ_HOTEL_QUERY_HOTCITY_FAIL = "10202";//查询热门城市系统异常,获取失败
+	public static final String BIZ_HOTEL_QUERY_HOTEL_FEATURE_FAIL = "10205";//查询酒店特色列表失败，系统异常
+	public static final String BIZ_HOTEL_QUERY_TRADE_AREA_FAIL = "10204"; //根据城市查询商圈失败，系统异常
+	/*主业务模块-end*/
+
+
+	public static final String SEARCH_ITRIP_HOTEL_PAGE_DESTINATION_FAIL = "20002";//分页查询酒店列表失败，目的地不能为空
+	public static final String SEARCH_ITRIP_HOTEL_PAGE_FAIL = "20001"; //分页查询酒店列表失败
+
+	public static final String SEARCH_ITRIP_HOTEL_LIST_BY_HOT_CITY_CITYID_FAIL = "20004";//城市id不能为空
+	public static final String SEARCH_ITRIP_HOTEL_LIST_BY_HOT_CITY_FAIL = "2003";//分页查询酒店列表失败
 }

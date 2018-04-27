@@ -3,7 +3,7 @@ import ${packageName}.beans.model.${table.className};
 import java.util.List;
 import java.util.Map;
 
-import ${packageName}.utils.Page;
+import ${packageName}.utils.common.Page;
 
 
 public interface ${table.className}Service {

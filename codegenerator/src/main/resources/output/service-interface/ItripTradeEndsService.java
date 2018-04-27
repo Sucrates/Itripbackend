@@ -3,7 +3,7 @@ import com.ytzl.itrip.beans.model.ItripTradeEnds;
 import java.util.List;
 import java.util.Map;
 
-import com.ytzl.itrip.utils.Page;
+import com.ytzl.itrip.utils.common.Page;
 
 
 public interface ItripTradeEndsService {

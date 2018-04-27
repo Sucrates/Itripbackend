@@ -32,4 +32,8 @@ public interface ItripUserService {
     public void registerByPhone(ItripUser itripUser) throws ItripException;
 
     public void activateByPhone(String userCode, String code) throws ItripException;
+
+    public void doregister(ItripUser itripUser) throws ItripException;
+
+    public void activate(String userCode, String code) throws ItripException;
 }
