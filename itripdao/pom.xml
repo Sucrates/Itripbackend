@@ -13,11 +13,9 @@
 
     <dependencies>
         <dependency>
-            <groupId> com.ytzl.itrip</groupId>
+            <groupId>com.ytzl.itrip</groupId>
             <artifactId>itriputils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
-
 </project>

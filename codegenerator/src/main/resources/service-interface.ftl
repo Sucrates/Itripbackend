@@ -2,7 +2,6 @@ package ${packageName}.service;
 import ${packageName}.beans.model.${table.className};
 import java.util.List;
 import java.util.Map;
-
 import ${packageName}.utils.common.Page;
 
 

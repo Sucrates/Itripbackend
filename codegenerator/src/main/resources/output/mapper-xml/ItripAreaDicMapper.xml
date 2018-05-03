@@ -6,20 +6,20 @@
 
     <select id="getItripAreaDicById" resultType="ItripAreaDic">
         select
-        id as id,         <!--主键-->
-        name as name,         <!--区域名称-->
-        areaNo as areaNo,         <!--区域编号-->
-        parent as parent,         <!--父级区域-->
-        isActivated as isActivated,         <!--0:未激活 1:已激活-->
-        isTradingArea as isTradingArea,         <!--是否是商圈(0:不是 1:是)-->
-        isHot as isHot,         <!--(0:不是 1：是)-->
-        level as level,         <!--区域级别(0:国家级 1:省级 2:市级 3:县/区)-->
-        isChina as isChina,         <!--1:国内 2：国外-->
-        pinyin as pinyin,         <!---->
-        creationDate as creationDate,         <!---->
-        createdBy as createdBy,         <!---->
-        modifyDate as modifyDate,         <!---->
-        modifiedBy as modifiedBy          <!---->
+                id as id,         <!--主键-->
+                name as name,         <!--区域名称-->
+                areaNo as areaNo,         <!--区域编号-->
+                parent as parent,         <!--父级区域-->
+                isActivated as isActivated,         <!--0:未激活 1:已激活-->
+                isTradingArea as isTradingArea,         <!--是否是商圈(0:不是 1:是)-->
+                isHot as isHot,         <!--(0:不是 1：是)-->
+                level as level,         <!--区域级别(0:国家级 1:省级 2:市级 3:县/区)-->
+                isChina as isChina,         <!--1:国内 2：国外-->
+                pinyin as pinyin,         <!---->
+                creationDate as creationDate,         <!---->
+                createdBy as createdBy,         <!---->
+                modifyDate as modifyDate,         <!---->
+                modifiedBy as modifiedBy          <!---->
         from itrip_area_dic
         <trim prefix="where" prefixOverrides="and | or">
             <if test="id != null">
@@ -30,22 +30,22 @@
 
     <select id="getItripAreaDicListByMap" resultType="ItripAreaDic"
             parameterType="java.util.Map">
-        select
-        id as id,      <!--主键-->
-        name as name,      <!--区域名称-->
-        areaNo as areaNo,      <!--区域编号-->
-        parent as parent,      <!--父级区域-->
-        isActivated as isActivated,      <!--0:未激活 1:已激活-->
-        isTradingArea as isTradingArea,      <!--是否是商圈(0:不是 1:是)-->
-        isHot as isHot,      <!--(0:不是 1：是)-->
-        level as level,      <!--区域级别(0:国家级 1:省级 2:市级 3:县/区)-->
-        isChina as isChina,      <!--1:国内 2：国外-->
-        pinyin as pinyin,      <!---->
-        creationDate as creationDate,      <!---->
-        createdBy as createdBy,      <!---->
-        modifyDate as modifyDate,      <!---->
-        modifiedBy as modifiedBy       <!---->
-        from itrip_area_dic
+            select
+                id as id,      <!--主键-->
+                name as name,      <!--区域名称-->
+                areaNo as areaNo,      <!--区域编号-->
+                parent as parent,      <!--父级区域-->
+                isActivated as isActivated,      <!--0:未激活 1:已激活-->
+                isTradingArea as isTradingArea,      <!--是否是商圈(0:不是 1:是)-->
+                isHot as isHot,      <!--(0:不是 1：是)-->
+                level as level,      <!--区域级别(0:国家级 1:省级 2:市级 3:县/区)-->
+                isChina as isChina,      <!--1:国内 2：国外-->
+                pinyin as pinyin,      <!---->
+                creationDate as creationDate,      <!---->
+                createdBy as createdBy,      <!---->
+                modifyDate as modifyDate,      <!---->
+                modifiedBy as modifiedBy       <!---->
+            from itrip_area_dic
         <trim prefix="where" prefixOverrides="and | or">
                 <if test="id != null and id!=''">
                     and id=#{id}
@@ -99,48 +99,48 @@
     <select id="getItripAreaDicCountByMap" resultType="Integer" parameterType="java.util.Map">
         select count(*) from itrip_area_dic
         <trim prefix="where" prefixOverrides="and | or">
-                <if test="id != null and id!=''">
-                    and id=#{id}
-                </if>
-                <if test="name != null and name!=''">
-                    and name=#{name}
-                </if>
-                <if test="areaNo != null and areaNo!=''">
-                    and areaNo=#{areaNo}
-                </if>
-                <if test="parent != null and parent!=''">
-                    and parent=#{parent}
-                </if>
-                <if test="isActivated != null and (isActivated!='' or isActivated==0)">
-                    and isActivated=#{isActivated}
-                </if>
-                <if test="isTradingArea != null and (isTradingArea!='' or isTradingArea==0)">
-                    and isTradingArea=#{isTradingArea}
-                </if>
-                <if test="isHot != null and (isHot!='' or isHot==0)">
-                    and isHot=#{isHot}
-                </if>
-                <if test="level != null and (level!='' or level==0)">
-                    and level=#{level}
-                </if>
-                <if test="isChina != null and (isChina!='' or isChina==0)">
-                    and isChina=#{isChina}
-                </if>
-                <if test="pinyin != null and pinyin!=''">
-                    and pinyin=#{pinyin}
-                </if>
-                <if test="creationDate != null and creationDate!=''">
-                    and creationDate=#{creationDate}
-                </if>
-                <if test="createdBy != null and createdBy!=''">
-                    and createdBy=#{createdBy}
-                </if>
-                <if test="modifyDate != null and modifyDate!=''">
-                    and modifyDate=#{modifyDate}
-                </if>
-                <if test="modifiedBy != null and modifiedBy!=''">
-                    and modifiedBy=#{modifiedBy}
-                </if>
+                    <if test="id != null and id!=''">
+                        and id=#{id}
+                    </if>
+                    <if test="name != null and name!=''">
+                        and name=#{name}
+                    </if>
+                    <if test="areaNo != null and areaNo!=''">
+                        and areaNo=#{areaNo}
+                    </if>
+                    <if test="parent != null and parent!=''">
+                        and parent=#{parent}
+                    </if>
+                    <if test="isActivated != null and (isActivated!='' or isActivated==0)">
+                        and isActivated=#{isActivated}
+                    </if>
+                    <if test="isTradingArea != null and (isTradingArea!='' or isTradingArea==0)">
+                        and isTradingArea=#{isTradingArea}
+                    </if>
+                    <if test="isHot != null and (isHot!='' or isHot==0)">
+                        and isHot=#{isHot}
+                    </if>
+                    <if test="level != null and (level!='' or level==0)">
+                        and level=#{level}
+                    </if>
+                    <if test="isChina != null and (isChina!='' or isChina==0)">
+                        and isChina=#{isChina}
+                    </if>
+                    <if test="pinyin != null and pinyin!=''">
+                        and pinyin=#{pinyin}
+                    </if>
+                    <if test="creationDate != null and creationDate!=''">
+                        and creationDate=#{creationDate}
+                    </if>
+                    <if test="createdBy != null and createdBy!=''">
+                        and createdBy=#{createdBy}
+                    </if>
+                    <if test="modifyDate != null and modifyDate!=''">
+                        and modifyDate=#{modifyDate}
+                    </if>
+                    <if test="modifiedBy != null and modifiedBy!=''">
+                        and modifiedBy=#{modifiedBy}
+                    </if>
         </trim>
     </select>
 
@@ -161,19 +161,19 @@
             modifiedBy       <!---->
         )
         values(
-            #{name} ,      <!--区域名称-->
-            #{areaNo} ,      <!--区域编号-->
-            #{parent} ,      <!--父级区域-->
-            #{isActivated} ,      <!--0:未激活 1:已激活-->
-            #{isTradingArea} ,      <!--是否是商圈(0:不是 1:是)-->
-            #{isHot} ,      <!--(0:不是 1：是)-->
-            #{level} ,      <!--区域级别(0:国家级 1:省级 2:市级 3:县/区)-->
-            #{isChina} ,      <!--1:国内 2：国外-->
-            #{pinyin} ,      <!---->
-            #{creationDate} ,      <!---->
-            #{createdBy} ,      <!---->
-            #{modifyDate} ,      <!---->
-            #{modifiedBy}       <!---->
+                    #{name} ,      <!--区域名称-->
+                    #{areaNo} ,      <!--区域编号-->
+                    #{parent} ,      <!--父级区域-->
+                    #{isActivated} ,      <!--0:未激活 1:已激活-->
+                    #{isTradingArea} ,      <!--是否是商圈(0:不是 1:是)-->
+                    #{isHot} ,      <!--(0:不是 1：是)-->
+                    #{level} ,      <!--区域级别(0:国家级 1:省级 2:市级 3:县/区)-->
+                    #{isChina} ,      <!--1:国内 2：国外-->
+                    #{pinyin} ,      <!---->
+                    #{creationDate} ,      <!---->
+                    #{createdBy} ,      <!---->
+                    #{modifyDate} ,      <!---->
+                    #{modifiedBy}       <!---->
         )
     </insert>
 
@@ -181,46 +181,46 @@
         update itrip_area_dic
         <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
                 <if test="id != null and id!=''">
-                id=#{id},
+                     id=#{id},
                 </if>
                 <if test="name != null and name!=''">
-                name=#{name},
+                     name=#{name},
                 </if>
                 <if test="areaNo != null and areaNo!=''">
-                areaNo=#{areaNo},
+                     areaNo=#{areaNo},
                 </if>
                 <if test="parent != null and parent!=''">
-                parent=#{parent},
+                     parent=#{parent},
                 </if>
                 <if test="isActivated != null and (isActivated!='' or isActivated==0)">
-                isActivated=#{isActivated},
+                     isActivated=#{isActivated},
                 </if>
                 <if test="isTradingArea != null and (isTradingArea!='' or isTradingArea==0)">
-                isTradingArea=#{isTradingArea},
+                     isTradingArea=#{isTradingArea},
                 </if>
                 <if test="isHot != null and (isHot!='' or isHot==0)">
-                isHot=#{isHot},
+                     isHot=#{isHot},
                 </if>
                 <if test="level != null and (level!='' or level==0)">
-                level=#{level},
+                     level=#{level},
                 </if>
                 <if test="isChina != null and (isChina!='' or isChina==0)">
-                isChina=#{isChina},
+                     isChina=#{isChina},
                 </if>
                 <if test="pinyin != null and pinyin!=''">
-                pinyin=#{pinyin},
+                     pinyin=#{pinyin},
                 </if>
                 <if test="creationDate != null and creationDate!=''">
-                creationDate=#{creationDate},
+                     creationDate=#{creationDate},
                 </if>
                 <if test="createdBy != null and createdBy!=''">
-                createdBy=#{createdBy},
+                     createdBy=#{createdBy},
                 </if>
                 <if test="modifyDate != null and modifyDate!=''">
-                modifyDate=#{modifyDate},
+                     modifyDate=#{modifyDate},
                 </if>
                 <if test="modifiedBy != null and modifiedBy!=''">
-                modifiedBy=#{modifiedBy},
+                     modifiedBy=#{modifiedBy},
                 </if>
         </trim>
     </update>

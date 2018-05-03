@@ -37,6 +37,7 @@ public class ItripHotelRoom implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -44,6 +45,7 @@ public class ItripHotelRoom implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
@@ -51,6 +53,7 @@ public class ItripHotelRoom implements Serializable {
     public Long getHotelId() {
         return this.hotelId;
     }
+
     public void setRoomTitle(String roomTitle) {
         this.roomTitle = roomTitle;
     }
@@ -58,6 +61,7 @@ public class ItripHotelRoom implements Serializable {
     public String getRoomTitle() {
         return this.roomTitle;
     }
+
     public void setRoomPrice(BigDecimal roomPrice) {
         this.roomPrice = roomPrice;
     }
@@ -65,6 +69,7 @@ public class ItripHotelRoom implements Serializable {
     public BigDecimal getRoomPrice() {
         return this.roomPrice;
     }
+
     public void setRoomBedTypeId(Long roomBedTypeId) {
         this.roomBedTypeId = roomBedTypeId;
     }
@@ -72,6 +77,7 @@ public class ItripHotelRoom implements Serializable {
     public Long getRoomBedTypeId() {
         return this.roomBedTypeId;
     }
+
     public void setIsHavingBreakfast(Integer isHavingBreakfast) {
         this.isHavingBreakfast = isHavingBreakfast;
     }
@@ -79,6 +85,7 @@ public class ItripHotelRoom implements Serializable {
     public Integer getIsHavingBreakfast() {
         return this.isHavingBreakfast;
     }
+
     public void setPayType(Integer payType) {
         this.payType = payType;
     }
@@ -86,6 +93,7 @@ public class ItripHotelRoom implements Serializable {
     public Integer getPayType() {
         return this.payType;
     }
+
     public void setSatisfaction(BigDecimal satisfaction) {
         this.satisfaction = satisfaction;
     }
@@ -93,6 +101,7 @@ public class ItripHotelRoom implements Serializable {
     public BigDecimal getSatisfaction() {
         return this.satisfaction;
     }
+
     public void setIsBook(Integer isBook) {
         this.isBook = isBook;
     }
@@ -100,6 +109,7 @@ public class ItripHotelRoom implements Serializable {
     public Integer getIsBook() {
         return this.isBook;
     }
+
     public void setIsCancel(Integer isCancel) {
         this.isCancel = isCancel;
     }
@@ -107,6 +117,7 @@ public class ItripHotelRoom implements Serializable {
     public Integer getIsCancel() {
         return this.isCancel;
     }
+
     public void setIsTimelyResponse(Integer isTimelyResponse) {
         this.isTimelyResponse = isTimelyResponse;
     }
@@ -114,6 +125,7 @@ public class ItripHotelRoom implements Serializable {
     public Integer getIsTimelyResponse() {
         return this.isTimelyResponse;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -121,6 +133,7 @@ public class ItripHotelRoom implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -128,6 +141,7 @@ public class ItripHotelRoom implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -135,6 +149,7 @@ public class ItripHotelRoom implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }

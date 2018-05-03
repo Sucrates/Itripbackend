@@ -156,6 +156,11 @@ public class ItripUserServiceImpl implements ItripUserService {
     }
 
     @Override
+    public void activate(String userCode, String code) throws ItripException {
+        activateByPhone(userCode, code);
+    }
+
+    @Override
     public void doregister(ItripUser itripUser) throws ItripException {
         //添加用户到数据库
         try {
@@ -167,17 +172,14 @@ public class ItripUserServiceImpl implements ItripUserService {
             throw new ItripException("注册用户异常，请稍后再试!",
                     ErrorCode.AUTH_UNKNOWN);
         }
-        //生成短信验证码
-        String code = DigestUtil.hmacSign(System.currentTimeMillis() + "", UUID.randomUUID() + "");
-        //发送短信验证码
+        //生成邮箱激活码
+        String code = DigestUtil.hmacSign(System.currentTimeMillis() + "",
+                UUID.randomUUID() + "");
+        //发送邮件
         mailService.send(itripUser.getUserCode(), code);
-        //保存短信验证码，时间为三分钟
-        redisAPI.set("activation:" + itripUser.getUserCode(), code, 60 * 3);
-    }
-
-    @Override
-    public void activate(String userCode, String code) throws ItripException {
-        activateByPhone(userCode, code);
+        //保存邮件激活码，时间为三分钟
+        redisAPI.set("activation:" + itripUser.getUserCode(),
+                code, 60 * 3);
     }
 
 }

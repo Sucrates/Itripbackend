@@ -21,6 +21,7 @@ public class ItripHotelTradingArea implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -28,6 +29,7 @@ public class ItripHotelTradingArea implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
@@ -35,6 +37,7 @@ public class ItripHotelTradingArea implements Serializable {
     public Long getHotelId() {
         return this.hotelId;
     }
+
     public void setAreaId(Long areaId) {
         this.areaId = areaId;
     }
@@ -42,6 +45,7 @@ public class ItripHotelTradingArea implements Serializable {
     public Long getAreaId() {
         return this.areaId;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -49,6 +53,7 @@ public class ItripHotelTradingArea implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -56,6 +61,7 @@ public class ItripHotelTradingArea implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -63,6 +69,7 @@ public class ItripHotelTradingArea implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }

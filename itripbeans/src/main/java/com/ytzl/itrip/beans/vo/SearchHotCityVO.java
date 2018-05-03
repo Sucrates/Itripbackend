@@ -4,14 +4,15 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Created by Su_crates on 2018/4/27.
+ * Created by sam on 2018/4/27.
  */
-@ApiModel(value = "searchHotCityVO", description = "更具热门城市查询列表")
+@ApiModel(value = "searchHotCityVO", description = "根据热门城市查询列表")
 public class SearchHotCityVO {
-    @ApiModelProperty("[必填]城市id")
+
+    @ApiModelProperty("[必填] 城市id")
     private Integer cityId;
 
-    @ApiModelProperty("[必填]查询数量")
+    @ApiModelProperty("[必填] 查询数量")
     private Integer count;
 
     public Integer getCityId() {

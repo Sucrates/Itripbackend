@@ -1,24 +1,29 @@
 package com.ytzl.itrip.biz.service;
+
 import com.ytzl.itrip.beans.model.ItripComment;
+
 import java.util.List;
 import java.util.Map;
 
+import com.ytzl.itrip.beans.vo.ItripCommentScoreVO;
 import com.ytzl.itrip.utils.common.Page;
 
 
 public interface ItripCommentService {
 
-    public ItripComment getItripCommentById(Long id)throws Exception;
+    public ItripComment getItripCommentById(Long id) throws Exception;
 
-    public List<ItripComment>	getItripCommentListByMap(Map<String, Object> param)throws Exception;
+    public List<ItripComment> getItripCommentListByMap(Map<String, Object> param) throws Exception;
 
-    public Integer getItripCommentCountByMap(Map<String, Object> param)throws Exception;
+    public Integer getItripCommentCountByMap(Map<String, Object> param) throws Exception;
 
-    public Integer saveItripComment(ItripComment itripComment)throws Exception;
+    public Integer saveItripComment(ItripComment itripComment) throws Exception;
 
-    public Integer modifyItripComment(ItripComment itripComment)throws Exception;
+    public Integer modifyItripComment(ItripComment itripComment) throws Exception;
 
-    public Integer removeItripCommentById(Long id)throws Exception;
+    public Integer removeItripCommentById(Long id) throws Exception;
 
-    public Page<ItripComment> queryItripCommentPageByMap(Map<String, Object> param, Integer pageNo, Integer pageSize)throws Exception;
+    public Page<ItripComment> queryItripCommentPageByMap(Map<String, Object> param, Integer pageNo, Integer pageSize) throws Exception;
+
+    ItripCommentScoreVO getHotelScoreByHotelId(Long hotelId) throws Exception;
 }

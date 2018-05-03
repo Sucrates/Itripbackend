@@ -13,6 +13,7 @@ public class ItripTradeEnds implements Serializable {
     //标识字段(默认0：未处理；1：处理中)
     private String flag;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -20,6 +21,7 @@ public class ItripTradeEnds implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
@@ -27,6 +29,7 @@ public class ItripTradeEnds implements Serializable {
     public String getOrderNo() {
         return this.orderNo;
     }
+
     public void setFlag(String flag) {
         this.flag = flag;
     }

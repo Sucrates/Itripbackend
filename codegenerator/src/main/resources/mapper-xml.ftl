@@ -6,13 +6,13 @@
 
     <select id="get${table.className}ById" resultType="${table.className}">
         select
-    <#list table.columnList as column>
-        <#if column_has_next>
-        ${column.columnName} as ${column.columnName},         <!--${column.columnRemark}-->
-        <#else>
-        ${column.columnName} as ${column.columnName}          <!--${column.columnRemark}-->
-        </#if>
-    </#list>
+        <#list table.columnList as column>
+            <#if column_has_next>
+                ${column.columnName} as ${column.columnName},         <!--${column.columnRemark}-->
+            <#else>
+                ${column.columnName} as ${column.columnName}          <!--${column.columnRemark}-->
+            </#if>
+        </#list>
         from ${table.tableName}
         <trim prefix="where" prefixOverrides="and | or">
             <if test="id != null">
@@ -23,15 +23,15 @@
 
     <select id="get${table.className}ListByMap" resultType="${table.className}"
             parameterType="java.util.Map">
-        select
-    <#list table.columnList as column>
-        <#if column_has_next>
-        ${column.columnName} as ${column.columnName},      <!--${column.columnRemark}-->
-        <#else>
-        ${column.columnName} as ${column.columnName}       <!--${column.columnRemark}-->
-        </#if>
-    </#list>
-        from ${table.tableName}
+            select
+            <#list table.columnList as column>
+                <#if column_has_next>
+                ${column.columnName} as ${column.columnName},      <!--${column.columnRemark}-->
+                <#else>
+                ${column.columnName} as ${column.columnName}       <!--${column.columnRemark}-->
+                </#if>
+            </#list>
+            from ${table.tableName}
         <trim prefix="where" prefixOverrides="and | or">
         <#list table.columnList as column>
             <#if column.columnType=="Integer" >
@@ -54,17 +54,17 @@
     <select id="get${table.className}CountByMap" resultType="Integer" parameterType="java.util.Map">
         select count(*) from ${table.tableName}
         <trim prefix="where" prefixOverrides="and | or">
-        <#list table.columnList as column>
-            <#if column.columnType=="Integer" >
-                <if test="${column.columnName} != null and (${column.columnName}!='' or ${column.columnName}==0)">
-                    and ${column.columnName}=${r"#{"}${column.columnName}}
-                </if>
-            <#else>
-                <if test="${column.columnName} != null and ${column.columnName}!=''">
-                    and ${column.columnName}=${r"#{"}${column.columnName}}
-                </if>
-            </#if>
-        </#list>
+            <#list table.columnList as column>
+                <#if column.columnType=="Integer" >
+                    <if test="${column.columnName} != null and (${column.columnName}!='' or ${column.columnName}==0)">
+                        and ${column.columnName}=${r"#{"}${column.columnName}}
+                    </if>
+                <#else>
+                    <if test="${column.columnName} != null and ${column.columnName}!=''">
+                        and ${column.columnName}=${r"#{"}${column.columnName}}
+                    </if>
+                </#if>
+            </#list>
         </trim>
     </select>
 
@@ -81,15 +81,15 @@
     </#list>
         )
         values(
-    <#list table.columnList as column>
-        <#if column.columnName !="id">
-            <#if column_has_next >
-            ${r"#{"}${column.columnName}} ,      <!--${column.columnRemark}-->
-            <#else>
-            ${r"#{"}${column.columnName}}       <!--${column.columnRemark}-->
-            </#if>
-        </#if>
-    </#list>
+            <#list table.columnList as column>
+                <#if column.columnName !="id">
+                    <#if column_has_next >
+                    ${r"#{"}${column.columnName}} ,      <!--${column.columnRemark}-->
+                    <#else>
+                    ${r"#{"}${column.columnName}}       <!--${column.columnRemark}-->
+                    </#if>
+                </#if>
+            </#list>
         )
     </insert>
 
@@ -99,11 +99,11 @@
         <#list table.columnList as column>
             <#if column.columnType=="Integer" >
                 <if test="${column.columnName} != null and (${column.columnName}!='' or ${column.columnName}==0)">
-                ${column.columnName}=${r"#{"}${column.columnName}},
+                     ${column.columnName}=${r"#{"}${column.columnName}},
                 </if>
             <#else>
                 <if test="${column.columnName} != null and ${column.columnName}!=''">
-                ${column.columnName}=${r"#{"}${column.columnName}},
+                     ${column.columnName}=${r"#{"}${column.columnName}},
                 </if>
             </#if>
         </#list>

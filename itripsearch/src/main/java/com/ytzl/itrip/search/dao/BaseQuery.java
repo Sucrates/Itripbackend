@@ -4,10 +4,12 @@ import com.ytzl.itrip.utils.common.Constants;
 import com.ytzl.itrip.utils.common.EmptyUtils;
 import com.ytzl.itrip.utils.common.Page;
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.apache.solr.client.solrj.response.QueryResponse;
 
+import java.io.IOException;
 import java.util.List;
 
 /**

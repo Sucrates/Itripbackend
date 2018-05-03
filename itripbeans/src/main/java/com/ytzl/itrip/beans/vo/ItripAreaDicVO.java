@@ -1,12 +1,13 @@
 package com.ytzl.itrip.beans.vo;
 
 /**
- * Created by Su_crates on 2018/4/25.
+ * Created by sam on 2018/4/25.
  */
 public class ItripAreaDicVO {
 
-    //主键
+    //主键Id
     private Long id;
+
     //区域名称
     private String name;
 

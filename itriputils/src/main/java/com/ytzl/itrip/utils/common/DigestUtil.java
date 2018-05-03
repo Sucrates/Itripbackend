@@ -11,7 +11,7 @@ public class DigestUtil {
     private static String encodingCharset = "UTF-8";
 
     public static String hmacSign(String aValue, int length) {
-        String md5Str = hmacSign(aValue, "yuntuzhilian");
+        String md5Str = hmacSign(aValue);
         if (md5Str.length() < length)
             length = md5Str.length();
         return md5Str.substring(0, length);
@@ -122,7 +122,8 @@ public class DigestUtil {
 
     public static void main(String[] args) {
         // 参数1: 明文(要加密的数据) 参数2: 密钥
-        System.out.println(DigestUtil.hmacSign("11111", "yuntuzhilian"));
+        System.out.println(DigestUtil.hmacSign("123456", "yuntuzhilian"));
+        System.out.println(DigestUtil.hmacSign("123456", "yuntuzhilian"));
         // 解决数据安全性问题: 把明文加密--->密文 然后把明文和密文都交给易宝
         // 易宝拿到数据后,把传过来的明文加密, 和传过来密文比较,如果相等数据没有被篡改 (商家与易宝加密时都用的是相同key)
 

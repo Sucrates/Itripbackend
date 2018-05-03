@@ -33,6 +33,16 @@
         </trim>
     </select>
 
+    <select id="getHotelScoreByHotelId" resultType="ItripCommentScoreVO">
+        SELECT
+        ROUND(AVG(ic.facilitiesScore),1) AS avgFacilitiesScore ,
+        ROUND(AVG(ic.positionScore),1) AS avgPositionScore ,
+        ROUND(AVG(ic.serviceScore),1) AS avgServiceScore ,
+        ROUND(AVG(ic.hygieneScore),1) AS avgHygieneScore ,
+        ROUND(AVG(ic.score),1) AS avgScore
+        FROM itrip_comment ic WHERE ic.hotelId=#{hotelId}
+    </select>
+
     <select id="getItripCommentListByMap" resultType="ItripComment"
             parameterType="java.util.Map">
         select
@@ -57,63 +67,63 @@
         modifiedBy as modifiedBy       <!---->
         from itrip_comment
         <trim prefix="where" prefixOverrides="and | or">
-                <if test="id != null and id!=''">
-                    and id=#{id}
-                </if>
-                <if test="hotelId != null and hotelId!=''">
-                    and hotelId=#{hotelId}
-                </if>
-                <if test="productId != null and productId!=''">
-                    and productId=#{productId}
-                </if>
-                <if test="orderId != null and orderId!=''">
-                    and orderId=#{orderId}
-                </if>
-                <if test="productType != null and (productType!='' or productType==0)">
-                    and productType=#{productType}
-                </if>
-                <if test="content != null and content!=''">
-                    and content=#{content}
-                </if>
-                <if test="userId != null and userId!=''">
-                    and userId=#{userId}
-                </if>
-                <if test="isHavingImg != null and (isHavingImg!='' or isHavingImg==0)">
-                    and isHavingImg=#{isHavingImg}
-                </if>
-                <if test="positionScore != null and (positionScore!='' or positionScore==0)">
-                    and positionScore=#{positionScore}
-                </if>
-                <if test="facilitiesScore != null and (facilitiesScore!='' or facilitiesScore==0)">
-                    and facilitiesScore=#{facilitiesScore}
-                </if>
-                <if test="serviceScore != null and (serviceScore!='' or serviceScore==0)">
-                    and serviceScore=#{serviceScore}
-                </if>
-                <if test="hygieneScore != null and (hygieneScore!='' or hygieneScore==0)">
-                    and hygieneScore=#{hygieneScore}
-                </if>
-                <if test="score != null and (score!='' or score==0)">
-                    and score=#{score}
-                </if>
-                <if test="tripMode != null and tripMode!=''">
-                    and tripMode=#{tripMode}
-                </if>
-                <if test="isOk != null and (isOk!='' or isOk==0)">
-                    and isOk=#{isOk}
-                </if>
-                <if test="creationDate != null and creationDate!=''">
-                    and creationDate=#{creationDate}
-                </if>
-                <if test="createdBy != null and createdBy!=''">
-                    and createdBy=#{createdBy}
-                </if>
-                <if test="modifyDate != null and modifyDate!=''">
-                    and modifyDate=#{modifyDate}
-                </if>
-                <if test="modifiedBy != null and modifiedBy!=''">
-                    and modifiedBy=#{modifiedBy}
-                </if>
+            <if test="id != null and id!=''">
+                and id=#{id}
+            </if>
+            <if test="hotelId != null and hotelId!=''">
+                and hotelId=#{hotelId}
+            </if>
+            <if test="productId != null and productId!=''">
+                and productId=#{productId}
+            </if>
+            <if test="orderId != null and orderId!=''">
+                and orderId=#{orderId}
+            </if>
+            <if test="productType != null and (productType!='' or productType==0)">
+                and productType=#{productType}
+            </if>
+            <if test="content != null and content!=''">
+                and content=#{content}
+            </if>
+            <if test="userId != null and userId!=''">
+                and userId=#{userId}
+            </if>
+            <if test="isHavingImg != null and (isHavingImg!='' or isHavingImg==0)">
+                and isHavingImg=#{isHavingImg}
+            </if>
+            <if test="positionScore != null and (positionScore!='' or positionScore==0)">
+                and positionScore=#{positionScore}
+            </if>
+            <if test="facilitiesScore != null and (facilitiesScore!='' or facilitiesScore==0)">
+                and facilitiesScore=#{facilitiesScore}
+            </if>
+            <if test="serviceScore != null and (serviceScore!='' or serviceScore==0)">
+                and serviceScore=#{serviceScore}
+            </if>
+            <if test="hygieneScore != null and (hygieneScore!='' or hygieneScore==0)">
+                and hygieneScore=#{hygieneScore}
+            </if>
+            <if test="score != null and (score!='' or score==0)">
+                and score=#{score}
+            </if>
+            <if test="tripMode != null and tripMode!=''">
+                and tripMode=#{tripMode}
+            </if>
+            <if test="isOk != null and (isOk!='' or isOk==0)">
+                and isOk=#{isOk}
+            </if>
+            <if test="creationDate != null and creationDate!=''">
+                and creationDate=#{creationDate}
+            </if>
+            <if test="createdBy != null and createdBy!=''">
+                and createdBy=#{createdBy}
+            </if>
+            <if test="modifyDate != null and modifyDate!=''">
+                and modifyDate=#{modifyDate}
+            </if>
+            <if test="modifiedBy != null and modifiedBy!=''">
+                and modifiedBy=#{modifiedBy}
+            </if>
         </trim>
         order by creationDate desc
         <if test="beginPos != null and beginPos!='' and pageSize != null  and pageSize !='' ">
@@ -124,169 +134,169 @@
     <select id="getItripCommentCountByMap" resultType="Integer" parameterType="java.util.Map">
         select count(*) from itrip_comment
         <trim prefix="where" prefixOverrides="and | or">
-                <if test="id != null and id!=''">
-                    and id=#{id}
-                </if>
-                <if test="hotelId != null and hotelId!=''">
-                    and hotelId=#{hotelId}
-                </if>
-                <if test="productId != null and productId!=''">
-                    and productId=#{productId}
-                </if>
-                <if test="orderId != null and orderId!=''">
-                    and orderId=#{orderId}
-                </if>
-                <if test="productType != null and (productType!='' or productType==0)">
-                    and productType=#{productType}
-                </if>
-                <if test="content != null and content!=''">
-                    and content=#{content}
-                </if>
-                <if test="userId != null and userId!=''">
-                    and userId=#{userId}
-                </if>
-                <if test="isHavingImg != null and (isHavingImg!='' or isHavingImg==0)">
-                    and isHavingImg=#{isHavingImg}
-                </if>
-                <if test="positionScore != null and (positionScore!='' or positionScore==0)">
-                    and positionScore=#{positionScore}
-                </if>
-                <if test="facilitiesScore != null and (facilitiesScore!='' or facilitiesScore==0)">
-                    and facilitiesScore=#{facilitiesScore}
-                </if>
-                <if test="serviceScore != null and (serviceScore!='' or serviceScore==0)">
-                    and serviceScore=#{serviceScore}
-                </if>
-                <if test="hygieneScore != null and (hygieneScore!='' or hygieneScore==0)">
-                    and hygieneScore=#{hygieneScore}
-                </if>
-                <if test="score != null and (score!='' or score==0)">
-                    and score=#{score}
-                </if>
-                <if test="tripMode != null and tripMode!=''">
-                    and tripMode=#{tripMode}
-                </if>
-                <if test="isOk != null and (isOk!='' or isOk==0)">
-                    and isOk=#{isOk}
-                </if>
-                <if test="creationDate != null and creationDate!=''">
-                    and creationDate=#{creationDate}
-                </if>
-                <if test="createdBy != null and createdBy!=''">
-                    and createdBy=#{createdBy}
-                </if>
-                <if test="modifyDate != null and modifyDate!=''">
-                    and modifyDate=#{modifyDate}
-                </if>
-                <if test="modifiedBy != null and modifiedBy!=''">
-                    and modifiedBy=#{modifiedBy}
-                </if>
+            <if test="id != null and id!=''">
+                and id=#{id}
+            </if>
+            <if test="hotelId != null and hotelId!=''">
+                and hotelId=#{hotelId}
+            </if>
+            <if test="productId != null and productId!=''">
+                and productId=#{productId}
+            </if>
+            <if test="orderId != null and orderId!=''">
+                and orderId=#{orderId}
+            </if>
+            <if test="productType != null and (productType!='' or productType==0)">
+                and productType=#{productType}
+            </if>
+            <if test="content != null and content!=''">
+                and content=#{content}
+            </if>
+            <if test="userId != null and userId!=''">
+                and userId=#{userId}
+            </if>
+            <if test="isHavingImg != null and (isHavingImg!='' or isHavingImg==0)">
+                and isHavingImg=#{isHavingImg}
+            </if>
+            <if test="positionScore != null and (positionScore!='' or positionScore==0)">
+                and positionScore=#{positionScore}
+            </if>
+            <if test="facilitiesScore != null and (facilitiesScore!='' or facilitiesScore==0)">
+                and facilitiesScore=#{facilitiesScore}
+            </if>
+            <if test="serviceScore != null and (serviceScore!='' or serviceScore==0)">
+                and serviceScore=#{serviceScore}
+            </if>
+            <if test="hygieneScore != null and (hygieneScore!='' or hygieneScore==0)">
+                and hygieneScore=#{hygieneScore}
+            </if>
+            <if test="score != null and (score!='' or score==0)">
+                and score=#{score}
+            </if>
+            <if test="tripMode != null and tripMode!=''">
+                and tripMode=#{tripMode}
+            </if>
+            <if test="isOk != null and (isOk!='' or isOk==0)">
+                and isOk=#{isOk}
+            </if>
+            <if test="creationDate != null and creationDate!=''">
+                and creationDate=#{creationDate}
+            </if>
+            <if test="createdBy != null and createdBy!=''">
+                and createdBy=#{createdBy}
+            </if>
+            <if test="modifyDate != null and modifyDate!=''">
+                and modifyDate=#{modifyDate}
+            </if>
+            <if test="modifiedBy != null and modifiedBy!=''">
+                and modifiedBy=#{modifiedBy}
+            </if>
         </trim>
     </select>
 
     <insert id="saveItripComment" parameterType="ItripComment">
         insert into itrip_comment(
-            hotelId ,      <!--如果产品是酒店的话 改字段保存酒店id-->
-            productId ,      <!--商品id-->
-            orderId ,      <!--订单id-->
-            productType ,      <!--商品类型(0:旅游产品 1:酒店产品 2:机票产品)-->
-            content ,      <!--评论内容-->
-            userId ,      <!--用户编号-->
-            isHavingImg ,      <!--是否包含图片(当用户上传评论时检测)0:无图片 1:有图片-->
-            positionScore ,      <!--位置评分-->
-            facilitiesScore ,      <!--设施评分-->
-            serviceScore ,      <!--服务评分-->
-            hygieneScore ,      <!--卫生评分-->
-            score ,      <!--综合评分-->
-            tripMode ,      <!--出游类型-->
-            isOk ,      <!--是否满意（0：有待改善 1：值得推荐）-->
-            creationDate ,      <!---->
-            createdBy ,      <!---->
-            modifyDate ,      <!---->
-            modifiedBy       <!---->
+        hotelId ,      <!--如果产品是酒店的话 改字段保存酒店id-->
+        productId ,      <!--商品id-->
+        orderId ,      <!--订单id-->
+        productType ,      <!--商品类型(0:旅游产品 1:酒店产品 2:机票产品)-->
+        content ,      <!--评论内容-->
+        userId ,      <!--用户编号-->
+        isHavingImg ,      <!--是否包含图片(当用户上传评论时检测)0:无图片 1:有图片-->
+        positionScore ,      <!--位置评分-->
+        facilitiesScore ,      <!--设施评分-->
+        serviceScore ,      <!--服务评分-->
+        hygieneScore ,      <!--卫生评分-->
+        score ,      <!--综合评分-->
+        tripMode ,      <!--出游类型-->
+        isOk ,      <!--是否满意（0：有待改善 1：值得推荐）-->
+        creationDate ,      <!---->
+        createdBy ,      <!---->
+        modifyDate ,      <!---->
+        modifiedBy       <!---->
         )
         values(
-            #{hotelId} ,      <!--如果产品是酒店的话 改字段保存酒店id-->
-            #{productId} ,      <!--商品id-->
-            #{orderId} ,      <!--订单id-->
-            #{productType} ,      <!--商品类型(0:旅游产品 1:酒店产品 2:机票产品)-->
-            #{content} ,      <!--评论内容-->
-            #{userId} ,      <!--用户编号-->
-            #{isHavingImg} ,      <!--是否包含图片(当用户上传评论时检测)0:无图片 1:有图片-->
-            #{positionScore} ,      <!--位置评分-->
-            #{facilitiesScore} ,      <!--设施评分-->
-            #{serviceScore} ,      <!--服务评分-->
-            #{hygieneScore} ,      <!--卫生评分-->
-            #{score} ,      <!--综合评分-->
-            #{tripMode} ,      <!--出游类型-->
-            #{isOk} ,      <!--是否满意（0：有待改善 1：值得推荐）-->
-            #{creationDate} ,      <!---->
-            #{createdBy} ,      <!---->
-            #{modifyDate} ,      <!---->
-            #{modifiedBy}       <!---->
+        #{hotelId} ,      <!--如果产品是酒店的话 改字段保存酒店id-->
+        #{productId} ,      <!--商品id-->
+        #{orderId} ,      <!--订单id-->
+        #{productType} ,      <!--商品类型(0:旅游产品 1:酒店产品 2:机票产品)-->
+        #{content} ,      <!--评论内容-->
+        #{userId} ,      <!--用户编号-->
+        #{isHavingImg} ,      <!--是否包含图片(当用户上传评论时检测)0:无图片 1:有图片-->
+        #{positionScore} ,      <!--位置评分-->
+        #{facilitiesScore} ,      <!--设施评分-->
+        #{serviceScore} ,      <!--服务评分-->
+        #{hygieneScore} ,      <!--卫生评分-->
+        #{score} ,      <!--综合评分-->
+        #{tripMode} ,      <!--出游类型-->
+        #{isOk} ,      <!--是否满意（0：有待改善 1：值得推荐）-->
+        #{creationDate} ,      <!---->
+        #{createdBy} ,      <!---->
+        #{modifyDate} ,      <!---->
+        #{modifiedBy}       <!---->
         )
     </insert>
 
     <update id="modifyItripComment" parameterType="ItripComment">
         update itrip_comment
         <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
-                <if test="id != null and id!=''">
+            <if test="id != null and id!=''">
                 id=#{id},
-                </if>
-                <if test="hotelId != null and hotelId!=''">
+            </if>
+            <if test="hotelId != null and hotelId!=''">
                 hotelId=#{hotelId},
-                </if>
-                <if test="productId != null and productId!=''">
+            </if>
+            <if test="productId != null and productId!=''">
                 productId=#{productId},
-                </if>
-                <if test="orderId != null and orderId!=''">
+            </if>
+            <if test="orderId != null and orderId!=''">
                 orderId=#{orderId},
-                </if>
-                <if test="productType != null and (productType!='' or productType==0)">
+            </if>
+            <if test="productType != null and (productType!='' or productType==0)">
                 productType=#{productType},
-                </if>
-                <if test="content != null and content!=''">
+            </if>
+            <if test="content != null and content!=''">
                 content=#{content},
-                </if>
-                <if test="userId != null and userId!=''">
+            </if>
+            <if test="userId != null and userId!=''">
                 userId=#{userId},
-                </if>
-                <if test="isHavingImg != null and (isHavingImg!='' or isHavingImg==0)">
+            </if>
+            <if test="isHavingImg != null and (isHavingImg!='' or isHavingImg==0)">
                 isHavingImg=#{isHavingImg},
-                </if>
-                <if test="positionScore != null and (positionScore!='' or positionScore==0)">
+            </if>
+            <if test="positionScore != null and (positionScore!='' or positionScore==0)">
                 positionScore=#{positionScore},
-                </if>
-                <if test="facilitiesScore != null and (facilitiesScore!='' or facilitiesScore==0)">
+            </if>
+            <if test="facilitiesScore != null and (facilitiesScore!='' or facilitiesScore==0)">
                 facilitiesScore=#{facilitiesScore},
-                </if>
-                <if test="serviceScore != null and (serviceScore!='' or serviceScore==0)">
+            </if>
+            <if test="serviceScore != null and (serviceScore!='' or serviceScore==0)">
                 serviceScore=#{serviceScore},
-                </if>
-                <if test="hygieneScore != null and (hygieneScore!='' or hygieneScore==0)">
+            </if>
+            <if test="hygieneScore != null and (hygieneScore!='' or hygieneScore==0)">
                 hygieneScore=#{hygieneScore},
-                </if>
-                <if test="score != null and (score!='' or score==0)">
+            </if>
+            <if test="score != null and (score!='' or score==0)">
                 score=#{score},
-                </if>
-                <if test="tripMode != null and tripMode!=''">
+            </if>
+            <if test="tripMode != null and tripMode!=''">
                 tripMode=#{tripMode},
-                </if>
-                <if test="isOk != null and (isOk!='' or isOk==0)">
+            </if>
+            <if test="isOk != null and (isOk!='' or isOk==0)">
                 isOk=#{isOk},
-                </if>
-                <if test="creationDate != null and creationDate!=''">
+            </if>
+            <if test="creationDate != null and creationDate!=''">
                 creationDate=#{creationDate},
-                </if>
-                <if test="createdBy != null and createdBy!=''">
+            </if>
+            <if test="createdBy != null and createdBy!=''">
                 createdBy=#{createdBy},
-                </if>
-                <if test="modifyDate != null and modifyDate!=''">
+            </if>
+            <if test="modifyDate != null and modifyDate!=''">
                 modifyDate=#{modifyDate},
-                </if>
-                <if test="modifiedBy != null and modifiedBy!=''">
+            </if>
+            <if test="modifiedBy != null and modifiedBy!=''">
                 modifiedBy=#{modifiedBy},
-                </if>
+            </if>
         </trim>
     </update>
 

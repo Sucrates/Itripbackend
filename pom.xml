@@ -7,40 +7,18 @@
     <groupId>com.ytzl.itrip</groupId>
     <artifactId>itripbackend</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <modules>
         <module>itripauth</module>
         <module>itripbiz</module>
         <module>itripsearch</module>
-        <module>itriptrade</module>
         <module>itriputils</module>
         <module>itripbeans</module>
         <module>itripdao</module>
+        <module>itriptrade</module>
         <module>codegenerator</module>
     </modules>
     <packaging>pom</packaging>
-    <!--依赖关系
 
-    auth
-        dao
-        *beans
-     utilsutil
-
-    biz
-        dao
-
-    search
-        utils
-
-    trade
-        dao
-
-    utils
-        beans
-
-    dao
-    utilsutil
-    -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -428,16 +406,27 @@
         </dependency>
         <!--SwaggerUI end-->
         <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
             <groupId>com.ytzl.itrip</groupId>
             <artifactId>smssdk</artifactId>
             <version>2.6</version>
         </dependency>
-
-        <!--solr-->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
             <version>5.3.1</version>
         </dependency>
     </dependencies>
+
+
 </project>

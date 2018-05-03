@@ -11,10 +11,12 @@ import com.ytzl.itrip.utils.exception.ItripException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Pattern;
 
 /**
@@ -24,6 +26,7 @@ import java.util.regex.Pattern;
 @RequestMapping("/api")
 @Api(description = "用户模块")
 public class ItripUserController {
+
 
     @Resource
     private ItripUserService itripUserService;
@@ -60,10 +63,9 @@ public class ItripUserController {
     @ResponseBody
     public Dto registerbyphone(@RequestBody ItripUserRegisterVO itripUserRegisterVO) {
         //验证手机号是否正确
-        if (!validPhone(itripUserRegisterVO.getUserCode())) {
+        if (!validPhone(itripUserRegisterVO.getUserCode()))
             return DtoUtil.returnFail("手机号格式不正确",
                     ErrorCode.AUTH_ILLEGAL_USERCODE);
-        }
         //将vo类转换为实体
         ItripUser itripUser = new ItripUser();
         itripUser.setUserCode(itripUserRegisterVO.getUserCode());
@@ -107,6 +109,28 @@ public class ItripUserController {
         }
     }
 
+    @ApiOperation(value = "邮箱注册激活码验证", httpMethod = "PUT",
+            produces = "application/json"
+            , response = Dto.class, notes = "邮箱激活码激活账户")
+    @RequestMapping(value = "/activate", method = RequestMethod.PUT,
+            produces = "application/json")
+    @ResponseBody
+    public Dto activate(@RequestParam("user")
+                             @ApiParam(value = "用户账号", required = true) String user,
+                             @RequestParam("code")
+                             @ApiParam(value = "激活码", required = true) String code) {
+        try {
+            //验证邮箱激活码
+            itripUserService.activate(user, code);
+            //验证成功
+            return DtoUtil.returnSuccess("验证成功");
+        } catch (ItripException e) {
+            e.printStackTrace();
+            return DtoUtil.returnSuccess("验证失败");
+        }
+    }
+
+
     @ApiOperation(value = "使用邮箱注册", httpMethod = "POST",
             produces = "application/json"
             , response = Dto.class, notes = "使用邮箱注册")
@@ -114,12 +138,11 @@ public class ItripUserController {
             method = RequestMethod.POST,
             produces = "application/json")
     @ResponseBody
-    public Dto registerbymail(@RequestBody ItripUserRegisterVO itripUserRegisterVO){
+    public Dto doregister(@RequestBody ItripUserRegisterVO itripUserRegisterVO) {
         //验证手机号是否正确
-        if (!validEmail(itripUserRegisterVO.getUserCode())) {
+        if (!validEmail(itripUserRegisterVO.getUserCode()))
             return DtoUtil.returnFail("邮箱格式不正确",
                     ErrorCode.AUTH_ILLEGAL_USERCODE);
-        }
         //将vo类转换为实体
         ItripUser itripUser = new ItripUser();
         itripUser.setUserCode(itripUserRegisterVO.getUserCode());
@@ -139,26 +162,6 @@ public class ItripUserController {
         } catch (ItripException e) {
             e.printStackTrace();
             return DtoUtil.returnFail(e.getMessage(), e.getErrorCode());
-        }
-    }
-
-    @ApiOperation(value = "邮箱注册用户邮箱验证", httpMethod = "PUT", produces = "application/json"
-            , response = Dto.class, notes = "邮箱注册用户邮箱验证")
-    @RequestMapping(value = "/activate", method = RequestMethod.PUT,
-            produces = "application/json")
-    @ResponseBody
-    public Dto activate(@RequestParam("user")
-                             @ApiParam(value = "用户账号", required = true) String user,
-                             @RequestParam("code")
-                             @ApiParam(value = "激活码", required = true) String code) {
-        try {
-            //验证短信验证码
-            itripUserService.activate(user, code);
-            //验证成功
-            return DtoUtil.returnSuccess("验证成功");
-        } catch (ItripException e) {
-            e.printStackTrace();
-            return DtoUtil.returnSuccess("验证失败");
         }
     }
 

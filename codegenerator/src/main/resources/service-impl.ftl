@@ -1,4 +1,5 @@
 package ${packageName}.service.impl;
+import ${packageName}.biz.service.${table.className}Service;
 import ${packageName}.dao.mapper.${table.className}Mapper;
 import ${packageName}.beans.model.${table.className};
 import ${packageName}.utils.common.EmptyUtils;
@@ -9,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import ${packageName}.utils.common.Constants;
+
 @Service("${table.firstLowerCaseClassName}Service")
 public class ${table.className}ServiceImpl implements ${table.className}Service {
 

@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import com.ytzl.itrip.utils.common.Constants;
+
 @Service("itripOrderLinkUserService")
 public class ItripOrderLinkUserServiceImpl implements ItripOrderLinkUserService {
 
@@ -52,6 +53,11 @@ public class ItripOrderLinkUserServiceImpl implements ItripOrderLinkUserService 
         List<ItripOrderLinkUser> itripOrderLinkUserList = itripOrderLinkUserMapper.getItripOrderLinkUserListByMap(param);
         page.setRows(itripOrderLinkUserList);
         return page;
+    }
+
+    @Override
+    public Integer removeItripOrderLinkUserByOrderId(Long id) {
+        return itripOrderLinkUserMapper.removeItripOrderLinkUserByOrderId(id);
     }
 
 }

@@ -12,9 +12,9 @@ public interface ItripHotelRoomMapper {
 
 	public Integer getItripHotelRoomCountByMap(Map<String, Object> param)throws Exception;
 
-	public Integer saveItripHotelRoom(ItripHotelRoom ItripHotelRoom)throws Exception;
+	public Integer saveItripHotelRoom(ItripHotelRoom itripHotelRoom)throws Exception;
 
-	public Integer modifyItripHotelRoom(ItripHotelRoom ItripHotelRoom)throws Exception;
+	public Integer modifyItripHotelRoom(ItripHotelRoom itripHotelRoom)throws Exception;
 
 	public Integer removeItripHotelRoomById(@Param(value = "id") Long id)throws Exception;
 

@@ -9,6 +9,7 @@ import com.ytzl.itrip.utils.common.EmptyUtils;
 import com.ytzl.itrip.utils.common.Page;
 import com.ytzl.itrip.utils.common.PropertiesUtils;
 import org.apache.solr.client.solrj.SolrQuery;
+import org.springframework.jdbc.object.SqlQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -98,7 +99,7 @@ public class SearchHotelServiceImpl implements SearchHotelService {
         }
         //返回查询结果
         return hotelSolrQuery.queryPage(solrQuery,searchHotelVO.getPageNo(),
-                searchHotelVO.getPageSize(),Hotel.class);
+                        searchHotelVO.getPageSize(),Hotel.class);
     }
 
     @Override

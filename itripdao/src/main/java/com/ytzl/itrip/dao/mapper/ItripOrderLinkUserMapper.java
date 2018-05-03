@@ -18,4 +18,6 @@ public interface ItripOrderLinkUserMapper {
 
 	public Integer removeItripOrderLinkUserById(@Param(value = "id") Long id)throws Exception;
 
+
+    Integer removeItripOrderLinkUserByOrderId(Long id);
 }

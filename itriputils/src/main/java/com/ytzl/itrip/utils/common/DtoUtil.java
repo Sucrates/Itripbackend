@@ -1,5 +1,6 @@
 package com.ytzl.itrip.utils.common;
 
+
 /**
  * 用于返回Dto的工具类
  * Created by XX on 17-5-8.

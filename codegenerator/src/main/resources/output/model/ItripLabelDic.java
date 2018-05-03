@@ -27,6 +27,7 @@ public class ItripLabelDic implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -34,6 +35,7 @@ public class ItripLabelDic implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -41,6 +43,7 @@ public class ItripLabelDic implements Serializable {
     public String getName() {
         return this.name;
     }
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -48,6 +51,7 @@ public class ItripLabelDic implements Serializable {
     public String getValue() {
         return this.value;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -55,6 +59,7 @@ public class ItripLabelDic implements Serializable {
     public String getDescription() {
         return this.description;
     }
+
     public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
@@ -62,6 +67,7 @@ public class ItripLabelDic implements Serializable {
     public Long getParentId() {
         return this.parentId;
     }
+
     public void setPic(String pic) {
         this.pic = pic;
     }
@@ -69,6 +75,7 @@ public class ItripLabelDic implements Serializable {
     public String getPic() {
         return this.pic;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -76,6 +83,7 @@ public class ItripLabelDic implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -83,6 +91,7 @@ public class ItripLabelDic implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -90,6 +99,7 @@ public class ItripLabelDic implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }

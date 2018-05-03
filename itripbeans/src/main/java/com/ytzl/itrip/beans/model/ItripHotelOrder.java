@@ -61,6 +61,7 @@ public class ItripHotelOrder implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -68,6 +69,7 @@ public class ItripHotelOrder implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setUserId(Long userId) {
         this.userId = userId;
     }
@@ -75,6 +77,7 @@ public class ItripHotelOrder implements Serializable {
     public Long getUserId() {
         return this.userId;
     }
+
     public void setOrderType(Integer orderType) {
         this.orderType = orderType;
     }
@@ -82,6 +85,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getOrderType() {
         return this.orderType;
     }
+
     public void setOrderNo(String orderNo) {
         this.orderNo = orderNo;
     }
@@ -89,6 +93,7 @@ public class ItripHotelOrder implements Serializable {
     public String getOrderNo() {
         return this.orderNo;
     }
+
     public void setTradeNo(String tradeNo) {
         this.tradeNo = tradeNo;
     }
@@ -96,6 +101,7 @@ public class ItripHotelOrder implements Serializable {
     public String getTradeNo() {
         return this.tradeNo;
     }
+
     public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
@@ -103,6 +109,7 @@ public class ItripHotelOrder implements Serializable {
     public Long getHotelId() {
         return this.hotelId;
     }
+
     public void setHotelName(String hotelName) {
         this.hotelName = hotelName;
     }
@@ -110,6 +117,7 @@ public class ItripHotelOrder implements Serializable {
     public String getHotelName() {
         return this.hotelName;
     }
+
     public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
@@ -117,6 +125,7 @@ public class ItripHotelOrder implements Serializable {
     public Long getRoomId() {
         return this.roomId;
     }
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -124,6 +133,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getCount() {
         return this.count;
     }
+
     public void setBookingDays(Integer bookingDays) {
         this.bookingDays = bookingDays;
     }
@@ -131,6 +141,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getBookingDays() {
         return this.bookingDays;
     }
+
     public void setCheckInDate(Date checkInDate) {
         this.checkInDate = checkInDate;
     }
@@ -138,6 +149,7 @@ public class ItripHotelOrder implements Serializable {
     public Date getCheckInDate() {
         return this.checkInDate;
     }
+
     public void setCheckOutDate(Date checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
@@ -145,6 +157,7 @@ public class ItripHotelOrder implements Serializable {
     public Date getCheckOutDate() {
         return this.checkOutDate;
     }
+
     public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
@@ -152,6 +165,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getOrderStatus() {
         return this.orderStatus;
     }
+
     public void setPayAmount(BigDecimal payAmount) {
         this.payAmount = payAmount;
     }
@@ -159,6 +173,7 @@ public class ItripHotelOrder implements Serializable {
     public BigDecimal getPayAmount() {
         return this.payAmount;
     }
+
     public void setPayType(Integer payType) {
         this.payType = payType;
     }
@@ -166,6 +181,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getPayType() {
         return this.payType;
     }
+
     public void setNoticePhone(String noticePhone) {
         this.noticePhone = noticePhone;
     }
@@ -173,6 +189,7 @@ public class ItripHotelOrder implements Serializable {
     public String getNoticePhone() {
         return this.noticePhone;
     }
+
     public void setNoticeEmail(String noticeEmail) {
         this.noticeEmail = noticeEmail;
     }
@@ -180,6 +197,7 @@ public class ItripHotelOrder implements Serializable {
     public String getNoticeEmail() {
         return this.noticeEmail;
     }
+
     public void setSpecialRequirement(String specialRequirement) {
         this.specialRequirement = specialRequirement;
     }
@@ -187,6 +205,7 @@ public class ItripHotelOrder implements Serializable {
     public String getSpecialRequirement() {
         return this.specialRequirement;
     }
+
     public void setIsNeedInvoice(Integer isNeedInvoice) {
         this.isNeedInvoice = isNeedInvoice;
     }
@@ -194,6 +213,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getIsNeedInvoice() {
         return this.isNeedInvoice;
     }
+
     public void setInvoiceType(Integer invoiceType) {
         this.invoiceType = invoiceType;
     }
@@ -201,6 +221,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getInvoiceType() {
         return this.invoiceType;
     }
+
     public void setInvoiceHead(String invoiceHead) {
         this.invoiceHead = invoiceHead;
     }
@@ -208,6 +229,7 @@ public class ItripHotelOrder implements Serializable {
     public String getInvoiceHead() {
         return this.invoiceHead;
     }
+
     public void setLinkUserName(String linkUserName) {
         this.linkUserName = linkUserName;
     }
@@ -215,6 +237,7 @@ public class ItripHotelOrder implements Serializable {
     public String getLinkUserName() {
         return this.linkUserName;
     }
+
     public void setBookType(Integer bookType) {
         this.bookType = bookType;
     }
@@ -222,6 +245,7 @@ public class ItripHotelOrder implements Serializable {
     public Integer getBookType() {
         return this.bookType;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -229,6 +253,7 @@ public class ItripHotelOrder implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -236,6 +261,7 @@ public class ItripHotelOrder implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -243,6 +269,7 @@ public class ItripHotelOrder implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }

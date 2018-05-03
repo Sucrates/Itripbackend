@@ -11,7 +11,8 @@ public class ${table.className} implements Serializable {
     private ${column.columnType} ${column.columnName};
     </#list>
 
-    <#list table.columnList as column>
+<#list table.columnList as column>
+
     public void set${column.firstUpperCaseColumnName}(${column.columnType} ${column.columnName}) {
         this.${column.columnName} = ${column.columnName};
     }
@@ -19,5 +20,5 @@ public class ${table.className} implements Serializable {
     public ${column.columnType} get${column.firstUpperCaseColumnName}() {
         return this.${column.columnName};
     }
-    </#list>
+</#list>
 }

@@ -27,6 +27,7 @@ public class ItripUserLinkUser implements Serializable {
     //证件类型：(0-身份证，1-护照，2-学生证，3-军人证，4-驾驶证，5-旅行证)
     private Integer linkIdCardType;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -34,6 +35,7 @@ public class ItripUserLinkUser implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setLinkUserName(String linkUserName) {
         this.linkUserName = linkUserName;
     }
@@ -41,6 +43,7 @@ public class ItripUserLinkUser implements Serializable {
     public String getLinkUserName() {
         return this.linkUserName;
     }
+
     public void setLinkIdCard(String linkIdCard) {
         this.linkIdCard = linkIdCard;
     }
@@ -48,6 +51,7 @@ public class ItripUserLinkUser implements Serializable {
     public String getLinkIdCard() {
         return this.linkIdCard;
     }
+
     public void setLinkPhone(String linkPhone) {
         this.linkPhone = linkPhone;
     }
@@ -55,6 +59,7 @@ public class ItripUserLinkUser implements Serializable {
     public String getLinkPhone() {
         return this.linkPhone;
     }
+
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
@@ -62,6 +67,7 @@ public class ItripUserLinkUser implements Serializable {
     public Integer getUserId() {
         return this.userId;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -69,6 +75,7 @@ public class ItripUserLinkUser implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -76,6 +83,7 @@ public class ItripUserLinkUser implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -83,6 +91,7 @@ public class ItripUserLinkUser implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
@@ -90,6 +99,7 @@ public class ItripUserLinkUser implements Serializable {
     public Long getModifiedBy() {
         return this.modifiedBy;
     }
+
     public void setLinkIdCardType(Integer linkIdCardType) {
         this.linkIdCardType = linkIdCardType;
     }

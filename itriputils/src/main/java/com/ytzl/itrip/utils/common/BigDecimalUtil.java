@@ -19,8 +19,10 @@ public class BigDecimalUtil {
      * @param numOne [String Integer Long Double Bigdecimal]
      * @param numTwo [String Integer Long Double Bigdecimal]
      * @param bigDecimalOpration
-     * @param scale
+     * @param scale  保留小数
      * @param roundingMode
+     *          ROUND_DOWN   向零方向舍入
+     *          ROUND_UP     向远离0的方向舍入
      * @return
      * @throws Exception
      */

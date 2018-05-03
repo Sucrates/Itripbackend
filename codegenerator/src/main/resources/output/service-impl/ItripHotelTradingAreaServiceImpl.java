@@ -1,4 +1,5 @@
 package com.ytzl.itrip.service.impl;
+import com.ytzl.itrip.biz.service.ItripHotelTradingAreaService;
 import com.ytzl.itrip.dao.mapper.ItripHotelTradingAreaMapper;
 import com.ytzl.itrip.beans.model.ItripHotelTradingArea;
 import com.ytzl.itrip.utils.common.EmptyUtils;
@@ -9,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import com.ytzl.itrip.utils.common.Constants;
+
 @Service("itripHotelTradingAreaService")
 public class ItripHotelTradingAreaServiceImpl implements ItripHotelTradingAreaService {
 

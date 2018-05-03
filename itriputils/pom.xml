@@ -11,10 +11,6 @@
 
     <artifactId>itriputils</artifactId>
 
-    <name>itriputils</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
-
     <dependencies>
         <dependency>
             <groupId>com.ytzl.itrip</groupId>
@@ -22,5 +18,4 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 </project>

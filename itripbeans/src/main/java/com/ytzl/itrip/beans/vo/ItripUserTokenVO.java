@@ -1,16 +1,18 @@
 package com.ytzl.itrip.beans.vo;
 
 /**
- * Created by Su_crates on 2018/4/23.
+ * Created by sam on 2018/4/23.
  */
 public class ItripUserTokenVO {
+    //过期时间
     private Long expTime;
-
+    //构建时间
     private Long genTime;
-
+    //token
     private String token;
 
     public ItripUserTokenVO() {
+
     }
 
     public ItripUserTokenVO(String token, Long expTime, Long genTime) {
@@ -20,7 +22,6 @@ public class ItripUserTokenVO {
     }
 
     public Long getExpTime() {
-
         return expTime;
     }
 

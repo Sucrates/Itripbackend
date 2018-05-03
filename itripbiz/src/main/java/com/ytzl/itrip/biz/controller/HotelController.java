@@ -25,8 +25,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -160,7 +158,7 @@ public class HotelController {
     }
 
 
-    @ApiOperation(value = "根据酒店id查询酒店特色、商圈、酒店名称（视频文字描述）",
+    @ApiOperation(value = "根据酒店id查询酒店特色、商圈、酒店名称",
             httpMethod = "GET", response = Dto.class,
             produces = "application/json",
             notes = "根据酒店id查询酒店特色、商圈、酒店名称（视频文字描述）  \n" +
@@ -208,8 +206,8 @@ public class HotelController {
             return DtoUtil.returnFail("获取酒店视频文字描述失败",
                     ErrorCode.BIZ_GET_VIDEO_DESC_FAIL);
         }
-    }
 
+    }
 
     @ApiOperation(value = "根据酒店id查询酒店特色和介绍",
             httpMethod = "GET", response = Dto.class,
@@ -285,7 +283,6 @@ public class HotelController {
                     "10207");
         }
     }
-
     @ApiOperation(value = "根据酒店id查询酒店政策",
             httpMethod = "GET", response = Dto.class,
             produces = "application/json",
@@ -298,8 +295,8 @@ public class HotelController {
             produces = "application/json")
     @ResponseBody
     public Dto queryhotelpolicy(@PathVariable(value = "id")
-                                @ApiParam(value = "酒店Id", required = true)
-                                        Long id) {
+                                    @ApiParam(value = "酒店Id", required = true)
+                                            Long id) {
         if (EmptyUtils.isEmpty(id)) {
             return DtoUtil.returnFail("酒店Id不能为空",
                     "10208");
@@ -314,5 +311,4 @@ public class HotelController {
                     "10209");
         }
     }
-
 }

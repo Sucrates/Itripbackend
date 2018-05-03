@@ -5,9 +5,10 @@ import org.apache.solr.client.solrj.beans.Field;
 import java.util.Date;
 
 /**
- * Created by Su_crates on 2018/4/26.
+ * Created by sam on 2018/4/26.
  */
 public class Hotel {
+
     @Field
     private Long id;
     @Field
@@ -24,27 +25,22 @@ public class Hotel {
     private String facilities;
     @Field
     private String hotelPolicy;
-
     @Field
     private Integer hotelType;
     @Field
     private Integer hotelLevel;
     @Field
-    private Integer isGroupPurchase;
-
+    private  Integer isGroupPurchase;
     @Field
     private String address;
-
     @Field
     private String redundantCityName;
     @Field
     private String redundantProvinceName;
     @Field
     private String redundantCountryName;
-
     @Field
     private Integer redundantHotelStore;
-
     @Field
     private Date creationDate;
     @Field
@@ -53,39 +49,32 @@ public class Hotel {
     private Date modifyDate;
     @Field
     private Long modifiedBy;
-
     @Field
     private String imgUrl;
-
     @Field
     private Integer isOkCount;
     @Field
     private Integer commentCount;
-
     @Field
     private String extendPropertyNames;
     @Field
     private String extendPropertyIds;
     @Field
     private String extendPropertyPics;
-
     @Field
     private String tradingAreaIds;
     @Field
     private String tradingAreaNames;
-
     @Field
-    private double minPrice;
+    private Double minPrice;
     @Field
-    private double maxPrice;
-
+    private Double maxPrice;
     @Field
     private String featureIds;
     @Field
     private String featureNames;
-
     @Field
-    private double avgScore;
+    private Double avgScore;
 
     public Long getId() {
         return id;
@@ -311,19 +300,19 @@ public class Hotel {
         this.tradingAreaNames = tradingAreaNames;
     }
 
-    public double getMinPrice() {
+    public Double getMinPrice() {
         return minPrice;
     }
 
-    public void setMinPrice(double minPrice) {
+    public void setMinPrice(Double minPrice) {
         this.minPrice = minPrice;
     }
 
-    public double getMaxPrice() {
+    public Double getMaxPrice() {
         return maxPrice;
     }
 
-    public void setMaxPrice(double maxPrice) {
+    public void setMaxPrice(Double maxPrice) {
         this.maxPrice = maxPrice;
     }
 
@@ -343,11 +332,11 @@ public class Hotel {
         this.featureNames = featureNames;
     }
 
-    public double getAvgScore() {
+    public Double getAvgScore() {
         return avgScore;
     }
 
-    public void setAvgScore(double avgScore) {
+    public void setAvgScore(Double avgScore) {
         this.avgScore = avgScore;
     }
 }

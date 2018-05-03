@@ -10,8 +10,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 ">
 
+
     <context:component-scan base-package="com.ytzl.itrip"/>
+
     <context:property-placeholder location="classpath*:db.properties"/>
+
     <bean id="itrip" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <array>
@@ -54,7 +57,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <!--SessionFactory-->
     <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
-        <property name="typeAliasesPackage" value="com.ytzl.itrip.beans.model"/>
+        <property name="typeAliasesPackage" value="com.ytzl.itrip.beans.model,com.ytzl.itrip.beans.vo"/>
         <property name="mapperLocations" value="classpath*:mapper-xml/*Mapper.xml"/>
     </bean>
 
@@ -83,18 +86,31 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <property name="sqlSessionFactory" ref="sessionFactory"/>
     </bean>
 
+
+    <!--redis config-->
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!--最大数量-->
         <property name="maxActive" value="${redis.maxActive}"/>
+        <!--最大空闲数量-->
         <property name="maxIdle" value="${redis.maxIdle}"/>
+        <!--最大等待时间-->
         <property name="maxWait" value="${redis.maxWait}"/>
+        <!--检查连接-->
         <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
     </bean>
 
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <!--jedis配置-->
         <constructor-arg ref="jedisPoolConfig"/>
+        <!--ip-->
         <constructor-arg value="${redis.host}"/>
+        <!--端口-->
         <constructor-arg value="${redis.port}"/>
+        <!--连接超时时间-->
         <constructor-arg value="${redis.timeout}"/>
+        <!--密码-->
         <constructor-arg value="${redis.password}"/>
     </bean>
+
+
 </beans>

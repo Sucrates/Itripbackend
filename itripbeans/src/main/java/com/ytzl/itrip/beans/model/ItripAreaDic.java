@@ -35,6 +35,7 @@ public class ItripAreaDic implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }

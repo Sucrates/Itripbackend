@@ -1,16 +1,18 @@
 package com.ytzl.itrip.beans.vo;
 
 /**
- * Created by Su_crates on 2018/4/25.
+ * Created by sam on 2018/4/25.
  */
 public class ItripLabelDicVO {
 
+
+    //Id
     private Long id;
-
+    //描述
     private String description;
-
+    //姓名
     private String name;
-
+    //图片地址
     private String pic;
 
     public Long getId() {

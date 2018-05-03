@@ -1,8 +1,8 @@
 package com.ytzl.itrip;
 
 
-import com.ytzl.itrip.bean.Column;
-import com.ytzl.itrip.bean.Table;
+import com.ytzl.itrip.beans.Column;
+import com.ytzl.itrip.beans.Table;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class TableHandler {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String JDBCURL = "jdbc:mysql://localhost:3306/itripdb";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "samson";
 
     private static Connection conn;
     private static DatabaseMetaData dbmd;
@@ -41,17 +41,24 @@ public class TableHandler {
             ResultSet rs = dbmd.getTables(null, null, null, new String[]{"TABLE"});
             while (rs.next()) {
                 String tableName = rs.getString("TABLE_NAME");
-                //System.out.println(tableName);
+                System.out.println("---" + tableName);
                 Table table = new Table();
                 table.setTableName(tableName);
                 table.setColumnList(getColumns(tableName));
                 String firstLowerCaseClassName = "";
                 String className = "";
+                //itrip_hotel_room
+                //itripHotelRoom
+                //ItripHotelRoom
+                // itrip    hotel    room
                 String[] split = tableName.split("_");
                 for (String sp : split) {
-                    className += sp.substring(0, 1).toUpperCase() + sp.substring(1);
+                    //itrip    hotel    room  --> ItripHotelRoom
+                    className += sp.substring(0, 1).toUpperCase()
+                            + sp.substring(1);
                 }
-                firstLowerCaseClassName = className.substring(0, 1).toLowerCase() + className.substring(1);
+                firstLowerCaseClassName = className.substring(0, 1).toLowerCase()
+                        + className.substring(1);
                 table.setFirstLowerCaseClassName(firstLowerCaseClassName);
                 table.setClassName(className);
                 tableList.add(table);
@@ -60,6 +67,10 @@ public class TableHandler {
             e.printStackTrace();
         }
         return tableList;
+    }
+
+    public static void main(String[] args) {
+        TableHandler.getColumns("itrip_hotel");
     }
 
     public static List<Column> getColumns(String tableName) {
@@ -73,19 +84,20 @@ public class TableHandler {
                 String typeName = rs.getString("TYPE_NAME");
                 //描述内容
                 String remarks = rs.getString("REMARKS");
-                //System.out.println(columnName + "-----" + swatchType(typeName) + "-----" + remarks);
+                System.out.println(columnName + "---" + swatchType(typeName) + "---" + remarks);
                 Column column = new Column();
                 column.setColumnName(columnName);
                 column.setColumnRemark(remarks);
                 column.setColumnType(swatchType(typeName));
-                String firstUpperCaseColumnName = columnName.substring(0, 1).toUpperCase() + columnName.substring(1);
+                //hotelName  HotelName
+                String firstUpperCaseColumnName = columnName.substring(0, 1).toUpperCase()
+                        + columnName.substring(1);
                 column.setFirstUpperCaseColumnName(firstUpperCaseColumnName);
                 columnList.add(column);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return columnList;
     }
 
@@ -104,11 +116,6 @@ public class TableHandler {
             default:
                 return "String";
         }
-    }
-
-    public static void main(String[] args) {
-        //TableHandler.getTables();
-        TableHandler.getColumns("itrip_area_dic");
     }
 
 

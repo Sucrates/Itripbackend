@@ -6,14 +6,14 @@
 
     <select id="getItripOrderLinkUserById" resultType="ItripOrderLinkUser">
         select
-        id as id,         <!--主键-->
-        orderId as orderId,         <!--订单id-->
-        linkUserId as linkUserId,         <!--联系人id-->
-        linkUserName as linkUserName,         <!--入住人姓名逗号分隔-->
-        creationDate as creationDate,         <!---->
-        createdBy as createdBy,         <!---->
-        modifyDate as modifyDate,         <!---->
-        modifiedBy as modifiedBy          <!---->
+                id as id,         <!--主键-->
+                orderId as orderId,         <!--订单id-->
+                linkUserId as linkUserId,         <!--联系人id-->
+                linkUserName as linkUserName,         <!--入住人姓名逗号分隔-->
+                creationDate as creationDate,         <!---->
+                createdBy as createdBy,         <!---->
+                modifyDate as modifyDate,         <!---->
+                modifiedBy as modifiedBy          <!---->
         from itrip_order_link_user
         <trim prefix="where" prefixOverrides="and | or">
             <if test="id != null">
@@ -24,16 +24,16 @@
 
     <select id="getItripOrderLinkUserListByMap" resultType="ItripOrderLinkUser"
             parameterType="java.util.Map">
-        select
-        id as id,      <!--主键-->
-        orderId as orderId,      <!--订单id-->
-        linkUserId as linkUserId,      <!--联系人id-->
-        linkUserName as linkUserName,      <!--入住人姓名逗号分隔-->
-        creationDate as creationDate,      <!---->
-        createdBy as createdBy,      <!---->
-        modifyDate as modifyDate,      <!---->
-        modifiedBy as modifiedBy       <!---->
-        from itrip_order_link_user
+            select
+                id as id,      <!--主键-->
+                orderId as orderId,      <!--订单id-->
+                linkUserId as linkUserId,      <!--联系人id-->
+                linkUserName as linkUserName,      <!--入住人姓名逗号分隔-->
+                creationDate as creationDate,      <!---->
+                createdBy as createdBy,      <!---->
+                modifyDate as modifyDate,      <!---->
+                modifiedBy as modifiedBy       <!---->
+            from itrip_order_link_user
         <trim prefix="where" prefixOverrides="and | or">
                 <if test="id != null and id!=''">
                     and id=#{id}
@@ -69,30 +69,30 @@
     <select id="getItripOrderLinkUserCountByMap" resultType="Integer" parameterType="java.util.Map">
         select count(*) from itrip_order_link_user
         <trim prefix="where" prefixOverrides="and | or">
-                <if test="id != null and id!=''">
-                    and id=#{id}
-                </if>
-                <if test="orderId != null and orderId!=''">
-                    and orderId=#{orderId}
-                </if>
-                <if test="linkUserId != null and linkUserId!=''">
-                    and linkUserId=#{linkUserId}
-                </if>
-                <if test="linkUserName != null and linkUserName!=''">
-                    and linkUserName=#{linkUserName}
-                </if>
-                <if test="creationDate != null and creationDate!=''">
-                    and creationDate=#{creationDate}
-                </if>
-                <if test="createdBy != null and createdBy!=''">
-                    and createdBy=#{createdBy}
-                </if>
-                <if test="modifyDate != null and modifyDate!=''">
-                    and modifyDate=#{modifyDate}
-                </if>
-                <if test="modifiedBy != null and modifiedBy!=''">
-                    and modifiedBy=#{modifiedBy}
-                </if>
+                    <if test="id != null and id!=''">
+                        and id=#{id}
+                    </if>
+                    <if test="orderId != null and orderId!=''">
+                        and orderId=#{orderId}
+                    </if>
+                    <if test="linkUserId != null and linkUserId!=''">
+                        and linkUserId=#{linkUserId}
+                    </if>
+                    <if test="linkUserName != null and linkUserName!=''">
+                        and linkUserName=#{linkUserName}
+                    </if>
+                    <if test="creationDate != null and creationDate!=''">
+                        and creationDate=#{creationDate}
+                    </if>
+                    <if test="createdBy != null and createdBy!=''">
+                        and createdBy=#{createdBy}
+                    </if>
+                    <if test="modifyDate != null and modifyDate!=''">
+                        and modifyDate=#{modifyDate}
+                    </if>
+                    <if test="modifiedBy != null and modifiedBy!=''">
+                        and modifiedBy=#{modifiedBy}
+                    </if>
         </trim>
     </select>
 
@@ -107,13 +107,13 @@
             modifiedBy       <!---->
         )
         values(
-            #{orderId} ,      <!--订单id-->
-            #{linkUserId} ,      <!--联系人id-->
-            #{linkUserName} ,      <!--入住人姓名逗号分隔-->
-            #{creationDate} ,      <!---->
-            #{createdBy} ,      <!---->
-            #{modifyDate} ,      <!---->
-            #{modifiedBy}       <!---->
+                    #{orderId} ,      <!--订单id-->
+                    #{linkUserId} ,      <!--联系人id-->
+                    #{linkUserName} ,      <!--入住人姓名逗号分隔-->
+                    #{creationDate} ,      <!---->
+                    #{createdBy} ,      <!---->
+                    #{modifyDate} ,      <!---->
+                    #{modifiedBy}       <!---->
         )
     </insert>
 
@@ -121,28 +121,28 @@
         update itrip_order_link_user
         <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
                 <if test="id != null and id!=''">
-                id=#{id},
+                     id=#{id},
                 </if>
                 <if test="orderId != null and orderId!=''">
-                orderId=#{orderId},
+                     orderId=#{orderId},
                 </if>
                 <if test="linkUserId != null and linkUserId!=''">
-                linkUserId=#{linkUserId},
+                     linkUserId=#{linkUserId},
                 </if>
                 <if test="linkUserName != null and linkUserName!=''">
-                linkUserName=#{linkUserName},
+                     linkUserName=#{linkUserName},
                 </if>
                 <if test="creationDate != null and creationDate!=''">
-                creationDate=#{creationDate},
+                     creationDate=#{creationDate},
                 </if>
                 <if test="createdBy != null and createdBy!=''">
-                createdBy=#{createdBy},
+                     createdBy=#{createdBy},
                 </if>
                 <if test="modifyDate != null and modifyDate!=''">
-                modifyDate=#{modifyDate},
+                     modifyDate=#{modifyDate},
                 </if>
                 <if test="modifiedBy != null and modifiedBy!=''">
-                modifiedBy=#{modifiedBy},
+                     modifiedBy=#{modifiedBy},
                 </if>
         </trim>
     </update>

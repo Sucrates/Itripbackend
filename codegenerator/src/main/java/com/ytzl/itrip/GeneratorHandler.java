@@ -1,6 +1,6 @@
 package com.ytzl.itrip;
 
-import com.ytzl.itrip.bean.Table;
+import com.ytzl.itrip.beans.Table;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -10,55 +10,66 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Su_crates on 2018/4/19.
+ * Created by sam on 2018/4/19.
  */
 public class GeneratorHandler {
-
+    //数据
+//    private List<Table> tableList;
+    //模板所在地址
     private static String templatePath = "codegenerator\\src\\main\\resources";
-
+    //文件输出地址
     private static String outputPath = "codegenerator\\src\\main\\resources\\output";
 
     private static String packageName = "com.ytzl.itrip";
 
+    public static void executeModel(Table table) {
+        execute(table,"model.ftl",
+                "model\\"+table.getClassName()+".java");
+    }
 
-    private static void execute(Table table, String templateName, String outputName) throws TemplateException {
+    public static void executeMapper(Table table) {
+        execute(table,"mapper-interface.ftl",
+                "mapper-interface\\"+table.getClassName()+"Mapper.java");
+    }
+    public static void executeMapperXml(Table table) {
+        execute(table,"mapper-xml.ftl",
+                "mapper-xml\\"+
+                        table.getFirstLowerCaseClassName()+"Mapper.xml");
+    }
+    public static void executeService(Table table) {
+        execute(table,"service-interface.ftl",
+                "service-interface\\"+table.getClassName()+"Service.java");
+    }
+    public static void executeServiceImpl(Table table) {
+        execute(table,"service-impl.ftl",
+                "service-impl\\"+table.getClassName()+"ServiceImpl.java");
+    }
+
+
+
+
+
+    private static void execute(Table table, String templateName, String outputName) {
         Configuration configuration = new Configuration();
-
         try {
             configuration.setDirectoryForTemplateLoading(new File(templatePath));
-
-            Map<String, Object> param = new HashMap<>();
-
+            //构建数据
+            Map<String, Object> param = new HashMap();
             param.put("table", table);
-
             param.put("packageName", packageName);
-
+            //获取模板
             Template template = configuration.getTemplate(templateName);
-            template.process(param, new OutputStreamWriter(new FileOutputStream(outputPath + "\\" + outputName)));
+            template.process(param, new OutputStreamWriter(
+                    new FileOutputStream(
+                            outputPath + "\\" + outputName)));
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (TemplateException e) {
             e.printStackTrace();
         }
     }
-
-    public  static void executeModel(Table table) throws TemplateException {
-        execute(table,"model.ftl","model\\"+table.getClassName()+".java");
-    }
-
-    public  static void executeMapper(Table table) throws TemplateException {
-        execute(table,"mapper-interface.ftl","mapper-interface\\"+table.getClassName()+"Mapper.java");
-    }
-    public  static void executeMapperXml(Table table) throws TemplateException {
-        execute(table,"mapper-xml.ftl","mapper-xml\\"+table.getClassName()+"Mapper.xml");
-    }
-
-    public  static void executeService(Table table) throws TemplateException {
-        execute(table,"service-interface.ftl","service-interface\\"+table.getClassName()+"Service.java");
-    }
-    public  static void executeServiceImpl(Table table) throws TemplateException {
-        execute(table, "service-impl.ftl","service-impl\\"+table.getClassName()+"ServiceImpl.java");
-    }
-
 }

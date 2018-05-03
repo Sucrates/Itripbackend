@@ -23,6 +23,7 @@ public class ItripOrderLinkUser implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -30,6 +31,7 @@ public class ItripOrderLinkUser implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
@@ -37,6 +39,7 @@ public class ItripOrderLinkUser implements Serializable {
     public Long getOrderId() {
         return this.orderId;
     }
+
     public void setLinkUserId(Long linkUserId) {
         this.linkUserId = linkUserId;
     }
@@ -44,6 +47,7 @@ public class ItripOrderLinkUser implements Serializable {
     public Long getLinkUserId() {
         return this.linkUserId;
     }
+
     public void setLinkUserName(String linkUserName) {
         this.linkUserName = linkUserName;
     }
@@ -51,6 +55,7 @@ public class ItripOrderLinkUser implements Serializable {
     public String getLinkUserName() {
         return this.linkUserName;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -58,6 +63,7 @@ public class ItripOrderLinkUser implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -65,6 +71,7 @@ public class ItripOrderLinkUser implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -72,6 +79,7 @@ public class ItripOrderLinkUser implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }

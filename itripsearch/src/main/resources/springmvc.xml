@@ -34,6 +34,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     </mvc:annotation-driven>
 
     <!--配置对静态文件的处理方式-->
-    <mvc:default-servlet-handler/>
+    <mvc:default-servlet-handler />
 
 </beans>

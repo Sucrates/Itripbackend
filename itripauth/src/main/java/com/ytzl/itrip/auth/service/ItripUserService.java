@@ -25,15 +25,20 @@ public interface ItripUserService {
 
     public Page<ItripUser> queryItripUserPageByMap(Map<String, Object> param, Integer pageNo, Integer pageSize) throws Exception;
 
+    //登录
     public ItripUser login(String userCode, String userPassword) throws ItripException;
 
     public ItripUser getItripUserByUserCode(String userCode) throws ItripException;
 
+    //根据手机号注册
     public void registerByPhone(ItripUser itripUser) throws ItripException;
 
+    //激活手机号
     public void activateByPhone(String userCode, String code) throws ItripException;
 
-    public void doregister(ItripUser itripUser) throws ItripException;
-
+    //激活邮箱
     public void activate(String userCode, String code) throws ItripException;
+
+    //邮箱注册
+    public void doregister(ItripUser itripUser) throws ItripException;
 }

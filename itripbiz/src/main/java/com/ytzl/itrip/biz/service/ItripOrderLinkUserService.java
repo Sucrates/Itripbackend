@@ -2,7 +2,6 @@ package com.ytzl.itrip.biz.service;
 import com.ytzl.itrip.beans.model.ItripOrderLinkUser;
 import java.util.List;
 import java.util.Map;
-
 import com.ytzl.itrip.utils.common.Page;
 
 
@@ -21,4 +20,6 @@ public interface ItripOrderLinkUserService {
     public Integer removeItripOrderLinkUserById(Long id)throws Exception;
 
     public Page<ItripOrderLinkUser> queryItripOrderLinkUserPageByMap(Map<String, Object> param, Integer pageNo, Integer pageSize)throws Exception;
+
+    Integer removeItripOrderLinkUserByOrderId(Long id);
 }

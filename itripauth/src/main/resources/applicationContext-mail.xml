@@ -2,25 +2,31 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+
+    <bean id="simpleMailMessage"
+          class="org.springframework.mail.SimpleMailMessage">
         <property name="subject" value="[爱旅行]新用户确认通知信"/>
-        <!-- 发送者 -->
-        <property name="from" value="Su_crates@aliyun.com"/>
+        <!--发送者-->
+        <property name="from" value="a17611451913@aliyun.com"/>
     </bean>
-    <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+    <bean id="javaMailSender"
+          class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <!--协议-->
         <property name="protocol" value="smtp"/>
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="host" value="smtp.aliyun.com"/>
         <property name="port" value="465"/>
-        <property name="username" value="Su_crates@aliyun.com"/>
-        <property name="password" value="17810200358y"/>
+        <property name="username" value="a17611451913@aliyun.com"/>
+        <property name="password" value="yhq1913"/>
         <property name="javaMailProperties">
             <props>
+                <!-- 设置SMTP服务器需要用户验证 -->
                 <prop key="mail.smtp.auth">true</prop>
                 <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
                 <prop key="mail.smtp.socketFactory.port">465</prop>
             </props>
         </property>
-
     </bean>
+
 </beans>

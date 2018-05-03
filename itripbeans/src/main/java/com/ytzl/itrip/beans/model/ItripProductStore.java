@@ -23,6 +23,7 @@ public class ItripProductStore implements Serializable {
     //
     private Long modifiedBy;
 
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -30,6 +31,7 @@ public class ItripProductStore implements Serializable {
     public Long getId() {
         return this.id;
     }
+
     public void setProductType(Integer productType) {
         this.productType = productType;
     }
@@ -37,6 +39,7 @@ public class ItripProductStore implements Serializable {
     public Integer getProductType() {
         return this.productType;
     }
+
     public void setProductId(Long productId) {
         this.productId = productId;
     }
@@ -44,6 +47,7 @@ public class ItripProductStore implements Serializable {
     public Long getProductId() {
         return this.productId;
     }
+
     public void setStore(Integer store) {
         this.store = store;
     }
@@ -51,6 +55,7 @@ public class ItripProductStore implements Serializable {
     public Integer getStore() {
         return this.store;
     }
+
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -58,6 +63,7 @@ public class ItripProductStore implements Serializable {
     public Date getCreationDate() {
         return this.creationDate;
     }
+
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
     }
@@ -65,6 +71,7 @@ public class ItripProductStore implements Serializable {
     public Long getCreatedBy() {
         return this.createdBy;
     }
+
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
@@ -72,6 +79,7 @@ public class ItripProductStore implements Serializable {
     public Date getModifyDate() {
         return this.modifyDate;
     }
+
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
     }

@@ -1,4 +1,5 @@
 package com.ytzl.itrip.biz.service.impl;
+import com.ytzl.itrip.beans.vo.ItripCommentScoreVO;
 import com.ytzl.itrip.biz.service.ItripCommentService;
 import com.ytzl.itrip.dao.mapper.ItripCommentMapper;
 import com.ytzl.itrip.beans.model.ItripComment;
@@ -10,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import com.ytzl.itrip.utils.common.Constants;
+
 @Service("itripCommentService")
 public class ItripCommentServiceImpl implements ItripCommentService {
 
@@ -52,6 +54,11 @@ public class ItripCommentServiceImpl implements ItripCommentService {
         List<ItripComment> itripCommentList = itripCommentMapper.getItripCommentListByMap(param);
         page.setRows(itripCommentList);
         return page;
+    }
+
+    @Override
+    public ItripCommentScoreVO getHotelScoreByHotelId(Long hotelId) throws Exception {
+        return itripCommentMapper.getHotelScoreByHotelId(hotelId);
     }
 
 }
